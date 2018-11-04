@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="css/open-sans.css" rel="stylesheet">
     <link href="css/all.css" rel="stylesheet">
+    <link href="css/hover-min.css" rel="stylesheet">
     <script src="main.js"></script>
     <title>Document</title>
 </head>
@@ -22,128 +23,126 @@
         </p>
     </header>
     <section id="contactFormSection">
-        <form id="contactForm">
+        <form id="contactForm" action="sendEmail.php" method="POST">
             <section id="contactFormName">
                 <label>Name*</label>
                 <div class="fieldInput">
-                    <input class="expandingLineField" id="contactName" type="text" placeholder="Who are you?">
+                    <input name="contactName" class="expandingLineField" id="contactName" type="text" placeholder="Who are you?">
                 </div>
                 <div class="colouredLine"></div>
+                <div class="errorContainer"><div class="nameError fieldError">Please enter a name.</div></div>
             </section>
+            
 
 
             <section id="contactFormSubject">
                 <label>Subject*</label>
                 <div class="fieldInput">
-                    <input  class="expandingLineField" type="text" id="contactSubject" placeholder="What would you like us to help you with?">
-                    <a id="toggleSubjectsBtn" href="#"><i class="fas fa-caret-down"></i></a>
+                    <input name="contactSubject" class="expandingLineField" type="text" id="contactSubject" placeholder="What would you like us to help you with?">
+                    <a class="hvr-wobble-vertical" id="toggleSubjectsBtn" href="#"><i class="fas fa-caret-down"></i></a>
                 </div>
                 <div class="colouredLine"></div>
+                <div class="errorContainer"><div class="subjectError fieldError">Please enter a subject.</div></div>
             </section>
-            <div id="subjectOptions">
-                <div class="subjectOption">
-                    <a href="#">Website Design & Development</a><div class="separator"></div>
+                <div id="subjectOptions" class="hidden">
+                    <div class="subjectOptionPrompt">Choose your services:</div>
+                    <div class="subjectOption">
+                        <a href="#">Website Design & Development</a><div class="separator"></div>
+                    </div>
+                    <div class="subjectOption">
+                        <a href="#">Social Media</a>
+                        <div class="separator"></div>
+                    </div>
+                    <div class="subjectOption">
+                        <a href="#">Branding & Design</a>
+                        <div class="separator"></div>
+                    </div>
+                    <div class="subjectOption">
+                        <a href="#">Google Adwords</a>
+                        <div class="separator"></div>
+                    </div>
+                    <div class="subjectOption">
+                        <a href="#">Trademarking</a>
+                        <div class="separator"></div>
+                    </div>
+                    <div class="subjectOption">
+                        <a href="#">GDPR</a>
+                        <div class="separator"></div>
+                    </div>
+                    <div class="subjectOption">
+                        <a href="#">After Care&trade; (Web Support & Maintenance)</a>
+                        <div class="separator"></div>
+                    </div>
+                    <div class="subjectOption">
+                        <a href="#">SEO</a>
+                        <div class="separator"></div>
+                    </div>
+                    <div class="subjectOption">
+                        <a href="#">Videography</a>
+                        <div class="separator"></div>
+                    </div>
+                    <div class="subjectOption">
+                        <a href="#">Photography</a>
+                        <div class="separator"></div>
+                    </div>
+                    <div class="subjectOption">
+                        <a href="#">Marketing</a>
+                        <div class="separator"></div>
+                    </div>
+                    <div class="subjectOption">
+                        <a href="#">PR</a>
+                    </div>
                 </div>
-                <div class="subjectOption">
-                    <a href="#">Social Media</a>
-                    <div class="separator"></div>
-                </div>
-                <div class="subjectOption">
-                    <a href="#">Branding & Design</a>
-                    <div class="separator"></div>
-                </div>
-                <div class="subjectOption">
-                    <a href="#">Google Adwords</a>
-                    <div class="separator"></div>
-                </div>
-                <div class="subjectOption">
-                    <a href="#">Trademarking</a>
-                    <div class="separator"></div>
-                </div>
-                <div class="subjectOption">
-                    <a href="#">GDPR</a>
-                    <div class="separator"></div>
-                </div>
-                <div class="subjectOption">
-                    <a href="#">After Care&trade; (Web Support & Maintenance)</a>
-                    <div class="separator"></div>
-                </div>
-                <div class="subjectOption">
-                    <a href="#">SEO</a>
-                    <div class="separator"></div>
-                </div>
-                <div class="subjectOption">
-                    <a href="#">Videography</a>
-                    <div class="separator"></div>
-                </div>
-                <div class="subjectOption">
-                    <a href="#">Photography</a>
-                    <div class="separator"></div>
-                </div>
-                <div class="subjectOption">
-                    <a href="#">Marketing</a>
-                    <div class="separator"></div>
-                </div>
-                <div class="subjectOption">
-                    <a href="#">PR</a>
-                </div>
-            </div>
+            <!-- </div> -->
 
             <div class="threeItemRow">
                 <section id="contactFormCompany">
                     <label>Company*</label>
                     <div class="fieldInput">
-                        <input class="expandingLineField" type="text" placeholder="Conceptai" id="contactCompany">
+                        <input name="contactCompany" class="expandingLineField" type="text" placeholder="Conceptai" id="contactCompany">
                         
                     </div>
                     <div class="colouredLine"></div>
+                    <div class="errorContainer"><div class="companyError fieldError">Please enter a company.</div></div>
                 </section>
                 <section id="contactFormEmail">
                     <label>Email*</label>
                     <div class="fieldInput">
-                        <input class="expandingLineField" type="text" placeholder="hello@conceptai.co.uk" id="contactEmail">
+                        <input name="contactEmail" class="expandingLineField" type="text" placeholder="hello@conceptai.co.uk" id="contactEmail">
                     </div>
                     <div class="colouredLine"></div>
+                    <div class="errorContainer"><div class="emailError fieldError">Please enter a valid email.</div></div>
                 </section>
                 <section id="contactFormPhone">
                     <label>Phone*</label>
                     
                     <div class="fieldInput">
-                        <input class="expandingLineField" type="text" id="contactPhone" placeholder="+44 1935 700 463">
+                        <input name="contactPhone" class="expandingLineField" type="text" id="contactPhone" placeholder="+44 1935 700 463">
                     </div>
                     <div class="colouredLine"></div>
+                    <div class="errorContainer"><div class="phoneError fieldError">Please enter a telephone number.</div></div>
                 </section>
             </div>
             <section id="contactFormEnquiry">
                 <label>Enquiry*</label>
                 <div class="fieldInput">
-                    <input class="expandingLineField" type="text" id="contactEnquiry" placeholder="Tell us more..."></div>
+                    <input name="contactEnquiry" class="expandingLineField" type="text" id="contactEnquiry" placeholder="Tell us more..."></div>
                 <div class="colouredLine"></div>
+                <div class="errorContainer"><div class="enquiryError fieldError">Please enter an enquiry.</div></div>
+                
             </section>
             <div id="sliderHeader">Budget</div>
             
             <section id="contactFormBudget">
-   
-            
-                <table>
+                   <table>
                     <tr>
                         <td>
                             <div class="slidershell" id="slidershell">
                                 <div class="sliderfill" id="sliderfill"></div>
                                 <div class="slidertrack" id="slidertrack"></div>
-                                <!-- <div class="sliderthumb" id="sliderthumb"> -->
-                                    <!-- <svg viewBox="0 0 32 32">
-                                        <circle r="16" cx="16" cy="16" />
-                                        <circle id="outline" r="16" cx="16" cy="16" />
-                                    </svg> -->
-                                <!-- </div> -->
-                                <svg id="sliderthumb" class="sliderthumb" viewBox="0 0 32 32">
-                                    <circle r="16" cx="16" cy="16" />
-                                    <circle id="outline" r="14" cx="16" cy="16" />
-                                </svg>
+                                <div id="sliderthumb" class="sliderthumb"></div>
                                 <div class="slidervalue" id="slidervalue">0</div>
-                                
-                                <input class="slider" id="slider" step="100" type="range" min="0" max="15000" value="0" oninput="showValue(value, false);" onchange="showValue(value, false);" />
+                                <input class="slider" id="slider" step="50" type="range" min="0" max="15000" value="0" oninput="showValue(value, false);" onchange="showValue(value, false);" />
                             </div>
                         </td>
                     </tr>
@@ -158,15 +157,16 @@
                 <h1>Always be the first to know.</h1>
                 <h2>Sign up for our newsletter!</h2>
                 <section id="newsletterEmail">
-                
                     <div class="fieldInput">
                         <input class="expandingLineField" id="signupEmail" type="text" placeholder="Email address">
                         <div class="colouredLine"></div>
+                        <div class="errorContainer"><div class="newsletterMessage fieldError">Thank you!</div></div>
+                        <button class="conceptaiButton subscribeBtn">Subscribe <img src="img/getInTouch.png"></button>
                     </div>
-                    <button class="conceptaiButton">Subscribe</button>
+                    
                     <div class="errorEmail">Invalid email address. Please retry.</div>
                 </section>
-                <button class="conceptaiButton vertical hidden">Subscribe</button>
+                <button class="conceptaiButton subscribeBtn vertical hidden">Subscribe <img src="img/getInTouch.png"></button>
             </div>
         </div>
     </section>
@@ -174,10 +174,17 @@
         <section id="footerTop">
             <div id="footerTopLeft">
                 
-                <span id="flagAndText"><img src="img/flag.png">United Kingdom ( English / GBP ) Reg in England 09543004, VAT Reg 276128392</span>
+                <span id="flagAndText">
+                    <span id="rowOne">
+                        <div class="flagAndTextContainer"><img src="img/flag.png">United Kingdom ( English / GBP )</div>
+                    </span>
+                    <span class="reg">Reg in England 09543004</span>
+                    <span class="vat">VAT Reg 276128392</span>
+                </span>
+                
             </div>
             <div id="footerTopRight">
-                <span class="telNo"><a href="tel:+44 1935 700 463"><i class="fas fa-phone"></i> +44 1935 700 463</a></span>
+                <span class="telNo"><a href="tel:+44 1935 700 463"><i class="fas fa-rotate-90 fa-phone"></i> +44 1935 700 463</a></span>
                 <span class="openingHours">9:00am - 5:00pm, Monday to Friday</span>
                 <div class="separator"></div>
                 <div class="socialMedia">    

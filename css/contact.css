@@ -4,6 +4,16 @@
   padding: 0;
 }
 
+body, html {
+  overflow-x: hidden;
+}
+
+#contactFormSubmitBtn {
+  text-align: center;
+  width: 153px;
+  height: 48px;
+}
+
 header {
   font-family: "open-sans", "Gothic A1", sans-serif;
   width: 75%;
@@ -19,6 +29,8 @@ header h1 {
 
 header p {
   margin: 2em;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 0.95em;
   font-weight: 300;
 }
@@ -27,27 +39,48 @@ header p {
   background-color: black;
 }
 
+.newsletterMessage {
+  padding-left: 0.7em;
+  font-size: 0.9em;
+  font-family: "open-sans", "Gothic A1", sans-serif;
+}
+
 #contactFormSection #contactForm {
   width: 75%;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   margin: auto;
+}
+
+#contactFormSection #contactForm #contactFormCompany {
+  z-index: 10;
+  background-color: white;
+}
+
+#contactFormSection #contactForm section#contactFormEmail {
+  z-index: 9;
+  background-color: white;
 }
 
 #contactFormSection #contactForm input {
   width: 100%;
   font-size: 0.9em;
   font-weight: 300;
+  font-family: "open-sans", "Gothic A1", sans-serif;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 
 #contactFormSection #contactForm #contactFormSubmitBtn {
   align-self: center;
-  background-color: #5bce11;
+  background-color: #48aa15;
   font-family: "open-sans", "Gothic A1", sans-serif;
   color: white;
   text-decoration: none;
   padding: 15px;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
 #contactFormSection #contactForm #contactFormSubmitBtn:hover img {
@@ -63,6 +96,7 @@ header p {
 
 #contactFormSection #contactForm #sliderHeader {
   margin: 1em;
+  margin-top: 40px;
 }
 
 #contactFormSection #contactForm #budgetSlider {
@@ -81,7 +115,7 @@ header p {
 
 #contactFormSection #contactForm input::placeholder {
   font-family: "open-sans", "Gothic A1", sans-serif;
-  color: #bfbfbf;
+  color: #919191;
 }
 
 #contactFormSection #contactForm input:focus {
@@ -91,14 +125,13 @@ header p {
 #contactFormSection #contactForm .fieldInput {
   align-items: center;
   display: flex;
-  width: 100%;
+  width: 70%;
 }
 
 #contactFormSection #contactForm #toggleSubjectsBtn {
   color: black;
   position: absolute;
-  left: 100%;
-  transform: translateX(-14px) translateY(4px);
+  left: calc(100% - 14px);
 }
 
 #contactFormSection #contactForm #contactFormSubject .colouredLine {
@@ -106,7 +139,10 @@ header p {
 }
 
 #contactFormSection #contactForm #contactFormSubject input {
-  flex-grow: 1;
+  width: calc(100% - 20px);
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 
 #contactFormSection #contactForm #contactFormSubject .fieldInput {
@@ -132,8 +168,10 @@ header p {
   border-bottom: #b3b3b3 1px solid;
   padding-bottom: 10px;
   margin: 0 0.7em 0 0.7em;
-  margin-top: 45px;
+  margin-top: 66px;
   position: relative;
+  background-color: white;
+  z-index: 1;
 }
 
 #contactFormSection #contactForm > section:not(#contactFormBudget) .fieldInput {
@@ -141,25 +179,34 @@ header p {
 }
 
 #contactFormSection #contactForm label {
-  width: 73px;
+  width: 80px;
   font-family: "open-sans", "Gothic A1", sans-serif;
-  margin-right: 10px;
+  font-size: 0.9em;
+  overflow: hidden;
+  transition: 1s margin;
+  background-color: white;
+}
+
+#contactFormSection #contactForm label.fieldFilled {
+  margin-left: -90px;
 }
 
 #contactFormSection #contactForm #subjectOptions {
-  display: none;
+  max-height: 0px;
   justify-content: flex-start;
   flex-wrap: wrap;
   margin: 10px 0.7em 0 0.7em;
   padding-left: 0.6em;
+  overflow: hidden;
 }
 
 #contactFormSection #contactForm #subjectOptions a {
   text-decoration: none;
   font-family: "open-sans", "Gothic A1", sans-serif;
-  font-size: 0.8em;
-  color: #bfbfbf;
+  font-size: 0.9em;
+  color: #919191;
   white-space: nowrap;
+  font-weight: 300;
   transition: color 0.1s;
 }
 
@@ -187,7 +234,7 @@ header p {
   display: flex;
   margin: 0 0.7em 0 0.7em;
   justify-content: space-between;
-  margin-top: 45px;
+  margin-top: 56px;
 }
 
 .threeItemRow section {
@@ -206,6 +253,10 @@ header p {
   background-color: black;
 }
 
+#toggleSubjectsBtn i {
+  transition: all 0.4s;
+}
+
 .colouredLine {
   background-color: white;
   width: 0%;
@@ -221,18 +272,31 @@ header p {
   width: 100%;
 }
 
+.showingSubscribeButton:not(.vertical) {
+  transform: translateX(-75px);
+}
+
+.subscribeBtn {
+  width: 130px !important;
+}
+
 #newsletterPrompt {
   text-align: center;
   background-color: lightblue;
   font-family: "open-sans", "Gothic A1", sans-serif;
-  padding: 10em;
+  padding: 10em 0 10em 0;
   background: linear-gradient(90deg, #2e003f, #9f1b54);
   color: white;
   margin-top: 2em;
 }
 
+#newsletterPrompt h2 {
+  font-weight: 100;
+}
+
 #newsletterPrompt #newsletterEmail {
   position: relative;
+  margin: auto;
 }
 
 #newsletterPrompt #newsletterEmail input {
@@ -258,6 +322,7 @@ header p {
   margin: auto;
   padding-bottom: 0.5em;
   position: relative;
+  width: 75%;
 }
 
 #newsletterPrompt .fieldInput .clearAndClose {
@@ -379,12 +444,11 @@ header p {
   padding-top: 30px;
   padding-bottom: 20px;
   display: flex;
-  align-items: center;
 }
 
 #footerTop #footerTopLeft span {
   display: flex;
-  align-items: center;
+  margin-right: 10px;
 }
 
 #footerTop #footerTopLeft img {
@@ -412,6 +476,32 @@ header p {
 .socialMedia .iconSocialMedia {
   color: #939393;
   font-size: 1.7em;
+  transition: color 0.4s;
+}
+
+.socialMedia .iconSocialMedia:hover {
+  color: #646464;
+}
+
+.fieldError {
+  font-family: "open-sans", "Gothic A1", sans-serif;
+  font-size: 0.9em;
+  color: red;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: 1s all;
+}
+
+.errorContainer {
+  position: absolute;
+  top: 100%;
+  overflow: hidden;
+  height: 30px;
+}
+
+.displayError {
+  transform: translateY(10px);
+  opacity: 1;
 }
 
 .telNo {
@@ -421,6 +511,11 @@ header p {
 .telNo a {
   text-decoration: none;
   color: #09c;
+  transition: all 0.4s;
+}
+
+.telNo a:hover {
+  opacity: 0.65;
 }
 
 .separator {
@@ -587,6 +682,7 @@ input[type=range]::-ms-tooltip {
   height: 40px;
   z-index: 2;
   background-color: white;
+  border: #2cb43e solid 4px;
   border-radius: 50%;
   position: absolute;
   left: 0;
@@ -626,6 +722,7 @@ footer #flagAndText {
   font-size: 16px;
   color: rgba(0, 0, 0, 0.8);
   text-align: center;
+  white-space: nowrap;
 }
 
 footer .openingHours {
@@ -648,6 +745,9 @@ footer .openingHours {
     margin-left: auto;
     margin-right: auto;
   }
+  #rowOne, .reg {
+    margin-bottom: 20px;
+  }
   #footerTop {
     flex-direction: column;
   }
@@ -668,6 +768,11 @@ footer .openingHours {
   }
   #footerTop #footerTopRight .separator {
     display: none;
+  }
+  #footerTop #footerTopLeft span {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0;
   }
 }
 
@@ -718,12 +823,29 @@ button.conceptaiButton.showing.vertical {
   height: 11px;
 }
 
+@media screen and (min-width: 735px) {
+  .showingSubscribeButton {
+    width: 33% !important;
+  }
+}
+
+.conceptaiButton img {
+  width: 25px;
+  transition: all 0.2s ease-out;
+  transform: translateY(2px);
+  margin-left: 3px;
+}
+
+.conceptaiButton:hover img {
+  transform: translateX(5px) translateY(2px);
+}
+
 .copyright {
   color: #999999;
 }
 
 button.conceptaiButton.hidden {
-  left: 75%;
+  left: 150%;
   position: absolute;
   top: 100%;
   transform: translateY(-100%);
@@ -733,7 +855,6 @@ button.conceptaiButton.hidden {
   background-color: transparent;
   border: 1px solid white;
   color: white;
-  border-radius: 2px;
   opacity: 0;
   transition: all 1s;
   pointer-events: none;
@@ -742,7 +863,7 @@ button.conceptaiButton.hidden {
 button.conceptaiButton.showing {
   display: block;
   opacity: 1.0;
-  left: 68%;
+  left: calc(100% + 20px);
   position: absolute;
   top: 100%;
   transform: translateY(-100%);
@@ -752,7 +873,6 @@ button.conceptaiButton.showing {
   background-color: transparent;
   border: 1px solid white;
   color: white;
-  border-radius: 2px;
   transition: all 1s;
   cursor: pointer;
 }
@@ -769,6 +889,7 @@ button.conceptaiButton.showing {
 #sliderHeader {
   font-family: "open-sans", "Gothic A1", sans-serif;
   text-align: center;
+  font-size: 0.9em;
 }
 
 button.conceptaiButton.hidden.vertical {
@@ -782,7 +903,6 @@ button.conceptaiButton.hidden.vertical {
   background-color: transparent;
   border: 1px solid white;
   color: white;
-  border-radius: 2px;
   transition: all 1s;
   pointer-events: none;
 }
@@ -798,7 +918,6 @@ button.conceptaiButton.showing.vertical {
   background-color: transparent;
   border: 1px solid white;
   color: white;
-  border-radius: 2px;
   transition: all 1s;
   pointer-events: all;
 }
@@ -808,7 +927,7 @@ button.conceptaiButton.showing.vertical {
     display: block;
   }
   #newsletterPrompt .fieldInput {
-    width: 50% !important;
+    width: 85% !important;
   }
   button.conceptaiButton.hidden:not(.vertical) {
     display: none !important;
@@ -819,13 +938,15 @@ button.conceptaiButton.showing.vertical {
   .nonmobile {
     display: none;
   }
-  #footerTop #footerTopLeft span {
-    font-size: 0.8em;
-    display: flex;
+  .showingSubscribeButton {
+    width: 33% !important;
+    transform: translateX(0) !important;
   }
-  #footerTop #footerTopLeft span img {
-    display: none;
-  }
+}
+
+.flagAndTextContainer {
+  display: flex;
+  align-items: center;
 }
 
 svg {
@@ -901,9 +1022,35 @@ circle#outline {
 }
 
 #newsletterPrompt {
-  -webkit-animation: ConceptaiGradient 30s ease infinite;
-  -moz-animation: ConceptaiGradient 30s ease infinite;
-  -o-animation: ConceptaiGradient 30s ease infinite;
-  animation: ConceptaiGradient 30s ease infinite;
+  -webkit-animation: ConceptaiGradient 10s ease infinite;
+  -moz-animation: ConceptaiGradient 10s ease infinite;
+  -o-animation: ConceptaiGradient 10s ease infinite;
+  animation: ConceptaiGradient 10s ease infinite;
   background-size: 400% 400%;
+}
+
+#contactFormSection #contactForm #contactFormBudget {
+  overflow: visible;
+}
+
+.fieldLabelContainer {
+  overflow: hidden;
+}
+
+.subjectOptionPrompt {
+  width: 100%;
+  font-family: "open-sans", "Gothic A1", sans-serif;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+#subjectOptions {
+  display: flex;
+  transition: max-height 0.5s ease;
+  z-index: 100;
+}
+
+.subjectOptionsDisplayed {
+  transition: max-height 1s ease;
+  max-height: 200px !important;
 }

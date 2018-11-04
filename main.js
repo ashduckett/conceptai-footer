@@ -3,6 +3,47 @@ function validateEmail(email) {
     return re.test(email.toLowerCase());
 }
 
+function encodeQueryData(data) {
+    const ret = [];
+    for (let d in data)
+        ret.push(encodeURIComponent(d) + '=' + encodeURIComponent(data[d]));
+    return ret.join('&');
+}
+
+function validateFields() {
+    var errors = false;
+    var itemHasError = false;
+    var inputFields = document.querySelectorAll('#contactForm input');
+
+    inputFields.forEach(function(item) {
+        if (item.type === 'text') {
+            itemHasError = false;
+            if (item.id === 'contactSubject') {
+                document.getElementById('subjectOptions').classList.toggle('subjectOptionsDisplayed', !item.value.trim() === '');
+                document.querySelector('#toggleSubjectsBtn i').classList.toggle('fa-rotate-180', !item.value.trim() === '');
+            }
+
+            var value = item.value;
+
+            if (item.id === 'contactEmail') {
+                var validEmail = validateEmail(value.trim());
+                if (!validEmail || value.trim() === '') {
+                    errors = true;
+                    itemHasError = true;
+                }
+            } else {
+                if (value.trim() === '') {
+                    errors = true;
+                    itemHasError = true;
+                }
+            }
+            item.parentElement.nextElementSibling.nextElementSibling.firstElementChild.classList.toggle('displayError', itemHasError);
+        }
+    });
+    return errors;
+}
+
+
 function showValue(val) {
     /* setup variables for the elements of our slider */
     var thumb = document.getElementById("sliderthumb");
@@ -29,9 +70,6 @@ function showValue(val) {
 
     thumb.style.left = loc + 'px';
 
-    // Grab the svg
-    var svg = document.querySelector('svg');
-    
     fill.style.left = loc + thumb.getBoundingClientRect().width / 2 + "px";
     var trackWidth = track.offsetWidth;
     fill.style.width = trackWidth - loc - thumb.getBoundingClientRect().width / 2 + 'px';
@@ -39,9 +77,6 @@ function showValue(val) {
     track.style.height = 0.5 + 'px';
     track.style.left = 0 + 'px';
     track.style.top = '50%';
-
-    var circle = document.querySelector('circle');
-    circle.style.strokeDasharray = parseInt(pc * 100) + ' 100';
   }
 
 /* we often need a function to set the slider values on page load */
@@ -50,34 +85,118 @@ function setValue(val) {
     showValue(val);
 }
 
-
-
 function showSubscribeButton(shouldShow) {
     if (shouldShow) {
         document.getElementsByClassName('conceptaiButton')[0].classList.replace('hidden', 'showing')
         document.querySelectorAll('.conceptaiButton.vertical')[0].classList.replace('hidden', 'showing')
-
-        document.querySelector('#newsletterPrompt .fieldInput').style.width = '33%';
+        document.querySelector('#newsletterPrompt .fieldInput').classList.add('showingSubscribeButton');
         document.getElementsByClassName('errorEmail')[0].style.display = 'none';
     } else {
         document.getElementsByClassName('conceptaiButton')[0].classList.replace('showing', 'hidden');
-
         document.querySelectorAll('.conceptaiButton.vertical')[0].classList.replace('showing', 'hidden');
-
-        document.querySelector('#newsletterPrompt .fieldInput').style.width = '50%';
+        document.querySelector('#newsletterPrompt .fieldInput').classList.remove('showingSubscribeButton');
     }
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+    const subscribeButtons = document.querySelectorAll('.subscribeBtn');
+
+    subscribeButtons.forEach(function(item) {
+        item.addEventListener('click', function(evt) {
+            console.log('clicked')
+            
+            var email = document.getElementById('signupEmail').value;
+
+
+            var request = new XMLHttpRequest();
+            request.open('POST', 'sendNewsletterEmail.php', true);
+            request.onload = function() {
+                if (request.status >= 200 && request.status < 400) {
+
+                    const signedUpMessage = document.getElementsByClassName('newsletterMessage')[0];
+                    signedUpMessage.classList.add('displayError');
+                    var resp = request.responseText;
+                    
+                    var json = null;
+                    try {
+                        json = JSON.parse(resp);
+                    } catch (ex) {
+
+                        console.log('There was an error.');
+                    }
+
+                    if (JSON.parse(resp).status === 1) {
+                        //  contactButton.innerHTML = 'Thank You!';
+                        const signedUpMessage = document.getElementsByClassName('newsletterMessage')[0];
+                        signedUpMessage.classList.add('displayError');
+
+                    }
+                } else {
+                    // There was an error. Show this in the UI.
+                    //contactButton.innerHTML = 'Submit enquiry <img src="img/getInTouch.png">';
+                }
+            };
+
+            request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+            
+            // Unsure if we can use ES6 tactics here and just omit the right side...
+            request.send(encodeQueryData({
+                email: email,
+            }));
+        
+        
+        
+        
+        
+        });
+    });
+
+
+
     document.getElementsByClassName('conceptaiButton')[0].classList.add('hidden');
+
+    const signupEmailInput = document.getElementById('signupEmail');
+    const subjectOptions = document.getElementById('subjectOptions');
+
 
     var emailType = ['gmail.com', 'hotmail.com', 'yahoo.com', 'outlook.com'];
     var emailDropdown = document.createElement('div');
     var emailContainers = [];
     emailDropdown.classList.add('emailDropdown');
 
+
+    var inputFields = document.querySelectorAll('#contactForm input');
+
+    inputFields.forEach(function(item) {
+        if (item.type === 'text') {
+
+
+            item.addEventListener('blur', function() {
+                if (item.id === 'contactSubject') {
+
+                    console.log(item.value.trim() === '')
+                    subjectOptions.classList.toggle('subjectOptionsDisplayed', !item.value.trim() === '');
+                    document.querySelector('#toggleSubjectsBtn i').classList.toggle('fa-rotate-180', !item.value.trim() === '');
+                }
+                var value = this.value;
+              
+                
+
+                if (item.id === 'contactEmail') {
+                    var validEmail = validateEmail(value.trim());
+                    errors = !validEmail || value.trim() === '';
+                } else {
+                    errors = value.trim() === '';
+                }
+
+                this.parentElement.nextElementSibling.nextElementSibling.firstElementChild.classList.toggle('displayError', errors);
+                
+            });
+        }
+    });
+
     emailDropdown.addEventListener('click', function(evt) {
-        document.getElementById('signupEmail').value = evt.target.textContent;
+        signupEmailInput.value = evt.target.textContent;
         emailDropdown.style.height = '0px';
 
         // Validate
@@ -88,7 +207,6 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementsByClassName('errorEmail')[0].style.display = 'block';
         }
     });
-
 
     emailType.forEach(function(item, index) {
         var emailContainer = document.createElement('div');
@@ -110,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     close.addEventListener('click', function(evt) {
         evt.preventDefault();
-        document.getElementById('signupEmail').value = '';
+        signupEmailInput.value = '';
         document.getElementsByClassName('errorEmail')[0].style.display = 'none';
         emailDropdown.style.height = '0px';
         showSubscribeButton(false)
@@ -120,12 +238,50 @@ document.addEventListener("DOMContentLoaded", function() {
     appendHere.appendChild(emailDropdown);
     appendHere.appendChild(close);
 
-    document.getElementById('subjectOptions').addEventListener('click', function(evt) {
-        
+    function encode(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+    }
+
+    subjectOptions.addEventListener('click', function(evt) {
+        evt.preventDefault();
         if (evt.target.tagName === 'A') {
-            var textToAdd = document.getElementById('contactSubject').value == '' ? evt.target.text : ', ' + evt.target.text;
-            document.getElementById('contactSubject').value += textToAdd;
-            evt.target.classList.add('activeSubject');
+
+            let exp = RegExp('([, ]+)?' + encode(evt.target.text));
+
+            // If it's present
+            if (exp.test(document.getElementById('contactSubject').value)) {
+                
+                // If it's found at the start of the string, remove any following items too
+                var index = document.getElementById('contactSubject').value.search(exp);
+
+                if (index === 0) {
+                    exp = RegExp('([, ]+)?' + encode(evt.target.text) + '([, ]+)?');
+                }
+
+
+                
+                document.getElementById('contactSubject').value = document.getElementById('contactSubject').value.replace(exp, '');
+                evt.target.classList.remove('activeSubject');
+
+
+
+
+            } else {
+                var textToAdd = document.getElementById('contactSubject').value == '' ? evt.target.text : ', ' + evt.target.text;
+    
+                // Add the text to the field
+                document.getElementById('contactSubject').value += textToAdd;
+
+                // Highlight the anchor
+                evt.target.classList.add('activeSubject');
+            }
+
+            // Slide out the label
+            if (document.getElementById('contactSubject').value == '') {
+                document.querySelector('#contactFormSubject label').classList.remove('fieldFilled');
+            } else {
+                document.querySelector('#contactFormSubject label').classList.add('fieldFilled');
+            }
         }
     });
 
@@ -140,20 +296,34 @@ document.addEventListener("DOMContentLoaded", function() {
 
         item.addEventListener('blur', function(evt) {
             if (evt.target.type === 'text') {
-                this.parentElement.nextElementSibling.classList.remove('expanded');
+                
+                evt.target.parentElement.nextElementSibling.classList.remove('expanded');
             }
+        });
+
+        item.addEventListener('input', function(evt) {
+            
+            if (evt.target.type === 'text') {
+                if (this.value.trim() !== '') {
+                    evt.target.parentElement.parentElement.firstElementChild.classList.add('fieldFilled');
+                } else {
+                    evt.target.parentElement.parentElement.firstElementChild.classList.remove('fieldFilled');
+                }
+            }
+
+            
         });
     });
 
-    document.getElementById('signupEmail').addEventListener('focus', function() {
+    signupEmailInput.addEventListener('focus', function() {
         this.nextElementSibling.classList.add('expanded');
     });
 
-    document.getElementById('signupEmail').addEventListener('blur', function() {
+    signupEmailInput.addEventListener('blur', function() {
         this.nextElementSibling.classList.remove('expanded');
     });
 
-    document.getElementById('signupEmail').addEventListener('keydown', function(evt) {
+    signupEmailInput.addEventListener('keydown', function(evt) {
         if (emailDropdown.offsetHeight !== 0 && evt.keyCode === 40) {   // DOWN pressed
             var dropdownItems = emailDropdown.childNodes;
             var indexOfKeyboardSelectedItem = null;
@@ -172,7 +342,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             dropdownItems[indexOfKeyboardSelectedItem].classList.add('keyboardSelectedEmailOption');
             var t = document.getElementsByClassName('keyboardSelectedEmailOption')[0].textContent;
-            document.getElementById('signupEmail').value = t;
+            signupEmailInput.value = t;
         } else if (emailDropdown.offsetHeight !== 0 && evt.keyCode === 38) {    // Up pressed
             var dropdownItems = emailDropdown.childNodes;
             var indexOfKeyboardSelectedItem = null;
@@ -192,7 +362,7 @@ document.addEventListener("DOMContentLoaded", function() {
             dropdownItems[indexOfKeyboardSelectedItem].classList.add('keyboardSelectedEmailOption');
 
         var t = document.getElementsByClassName('keyboardSelectedEmailOption')[0].textContent;
-        document.getElementById('signupEmail').value = t;
+        signupEmailInput.value = t;
 
         } else if (emailDropdown.offsetHeight !== 0 && evt.keyCode === 13) {    // Enter pressed
             // Now we need to get hold of the text of the selected item.
@@ -200,7 +370,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.querySelector('.emailDropdown').style.height = '0px';
 
             if (validateEmail(text)) {
-                document.getElementById('signupEmail').value = text;
+                signupEmailInput.value = text;
                 showSubscribeButton(true);
             } else {
                 document.getElementsByClassName('errorEmail')[0].style.display = 'block';
@@ -209,7 +379,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    document.getElementById('signupEmail').addEventListener('input', function(evt) {
+    signupEmailInput.addEventListener('input', function(evt) {
         var sanitisedInput = '';
         var indexOfAt = this.value.indexOf('@');
 
@@ -272,24 +442,88 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Handler when the DOM is fully loaded
     // This needs to be set explicitly rather than just the CSS as grabbing it doesn't know, apparently, about the CSS.
-    document.getElementById('subjectOptions').style.display = 'none';
+
+
+    document.getElementById('contactFormSubmitBtn').addEventListener('click', function(evt) {
+        evt.preventDefault();
+        // Grab the name
+        var name = document.getElementById('contactName').value;
+        var subject = document.getElementById('contactSubject').value;
+        var company = document.getElementById('contactCompany').value;
+        var email = document.getElementById('contactEmail').value;
+        var phone = document.getElementById('contactPhone').value;
+        var enquiry = document.getElementById('contactEnquiry').value;
+        var budget = document.getElementById('slider').value;
+
+        var errors = validateFields();
+
+
+        if (errors === false) {
+            console.log('fired code becase errors is ', errors)
+            // As soon as you hit the button, you should switch to a swirly icon.
+            var contactButton = document.getElementById('contactFormSubmitBtn');
+            contactButton.innerHTML = '<i class="fas fa-sync fa-spin"></i>';
+
+            var request = new XMLHttpRequest();
+            request.open('POST', 'sendEmail.php', true);
+            request.onload = function() {
+                if (request.status >= 200 && request.status < 400) {
+                    var resp = request.responseText;
+                    var json = null;
+                    try {
+                        json = JSON.parse(resp);
+                    } catch (ex) {
+                        contactButton.innerHTML = 'Submit enquiry <img src="img/getInTouch.png">';
+                        console.log('There was an error.');
+                    }
+
+                    if (JSON.parse(resp).status === 1) {
+                        contactButton.innerHTML = 'Thank You!';
+                    }
+                } else {
+                    // There was an error. Show this in the UI.
+                    contactButton.innerHTML = 'Submit enquiry <img src="img/getInTouch.png">';
+                }
+            };
+
+            request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+            
+            // Unsure if we can use ES6 tactics here and just omit the right side...
+            request.send(encodeQueryData({
+                name: name,
+                subject: subject,
+                company: company,
+                email: email,
+                phone: phone,
+                enquiry: enquiry,
+                budget: budget
+            }));
+        } else {
+
+            // If there's an error in the subject then hide the options.
+            if (document.getElementById('contactSubject').value.trim() === '') {
+                subjectOptions.classList.remove('subjectOptionsDisplayed');
+            }
+        }
+    });
 
     document.getElementById('toggleSubjectsBtn').addEventListener('click', function(evt) {
         evt.preventDefault();
-        var displayState = document.getElementById('subjectOptions').style.display === 'none' ? 'flex' : 'none';
-        
-        document.getElementById('subjectOptions').style.display = displayState;
+        subjectOptions.classList.toggle('subjectOptionsDisplayed');
 
-
-        if (displayState === 'flex') {
-            document.querySelector('#toggleSubjectsBtn i').classList.replace('fa-caret-down', 'fa-caret-up');
+        if (subjectOptions.classList.contains('subjectOptionsDisplayed')) {
+            document.querySelector('#toggleSubjectsBtn i').classList.add('fa-rotate-180');
+            subjectOptions.classList.remove('hidden');
+            subjectOptions.classList.remove('subjectOptionsHidden');
+            document.querySelector('.subjectError').classList.remove('displayError');
         } else {
-            document.querySelector('#toggleSubjectsBtn i').classList.replace('fa-caret-up', 'fa-caret-down');
+            document.querySelector('#toggleSubjectsBtn i').classList.remove('fa-rotate-180');
+            subjectOptions.classList.add('subjectOptionsHidden');
         }
     });
 
     /* We need to change slider appearance oninput and onchange */
-    setValue(7500);
+    setValue(1200);
     
     window.addEventListener('resize', function() {
         // Get hold of the current value given by the range
