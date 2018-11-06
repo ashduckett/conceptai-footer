@@ -2,7 +2,6 @@ $primary-font: 'open-sans','Gothic A1', sans-serif;
 $placeholder-color: rgb(145, 145, 145);
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -10,1210 +9,1113 @@ $placeholder-color: rgb(145, 145, 145);
 body, html {
     overflow-x: hidden;
 }
-#contactFormSubmitBtn {
-    text-align: center;
-    width: 153px;
-    height: 48px;
-}
-header {
-    font-family: $primary-font;
-    
-    width: 75%;
-    margin: auto;
 
-    h1 {
-        margin-top:1em;
-        font-size: 1.56em;
-        font-weight: 400; 
+
+
+
+#footerSection { 
+    * {
+        box-sizing: border-box;
     }
 
-    p {
-        margin: 2em;
-        margin-left: auto;
-        margin-right: auto;
-        font-size: 0.95em;
-        font-weight: 300;
+    #contactFormSubmitBtn {
+        text-align: center;
+        width: 153px;
+        height: 48px;
+        justify-content: center;
     }
-    text-align: center;
-}
-
-
-#contactFormEnquiry {
-    .colouredLine {
-        background-color: black;
-    }
-
-
-}
-
-.newsletterMessage {
-    padding-left: 0.7em;
-    font-size: 0.9em;
-    font-family: $primary-font;
-}
-
-#contactFormSection {
-    #contactForm {
-        #contactFormCompany {
-            z-index: 10;
-            background-color: white;
-        }
-        
-        section#contactFormEmail {
-            z-index: 9;
-            background-color: white;
-        }
+    header {
+        font-family: $primary-font;
         
         width: 75%;
-        overflow: hidden;
-        input {
-            width: 100%;
-            font-size: 0.9em;
-            font-weight: 300;
-            font-family: $primary-font;
-
-            -o-text-overflow: ellipsis;
-            -ms-text-overflow: ellipsis;
-            text-overflow: ellipsis;
-        }
-
-        #contactFormSubmitBtn {
-            align-self: center;
-            background-color: rgb(72, 170, 21);
-            font-family: $primary-font;
-            color: white;
-            text-decoration: none;
-            padding: 15px;
-            font-size: 0.8em;
-
-            &:hover img {
-                transform: translateX(5px) translateY(2px);
-            }
-
-            img {
-                width: 25px;
-                margin-left: 3px;
-                transition: all 0.2s ease-out;
-                transform: translateY(2px);
-           
-            }
-        }
-
-        #sliderHeader {
-            margin: 1em;
-            margin-top: 40px;
-        }
-
-        #budgetSlider {
-            width: 100%;
-        }
+        margin: auto;
 
         h1 {
-            font-family: $primary-font;
-            text-align: center;
+            margin-top:1em;
+            font-size: 1.56em;
+            font-weight: 400; 
         }
 
-        input {
-            border: none;
-            padding-left: 0.7em;
+        p {
+            margin: 2em;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 0.95em;
+            font-weight: 300;
+        }
+        text-align: center;
+    }
 
 
-            &::placeholder {
+    #contactFormEnquiry {
+        .colouredLine {
+            background-color: black;
+        }
+
+
+    }
+
+    .newsletterMessage {
+        padding-left: 0.7em;
+        font-size: 0.9em;
+        font-family: $primary-font;
+    }
+
+    #contactFormSection {
+        #contactForm {
+            #contactFormCompany {
+                z-index: 10;
+                background-color: white;
+            }
+            
+            section#contactFormEmail {
+                z-index: 9;
+                background-color: white;
+            }
+            
+            width: 75%;
+            overflow: hidden;
+            input {
+                width: 100%;
+                font-size: 0.9em;
+                font-weight: 300;
                 font-family: $primary-font;
-                // color: rgb(191, 191, 191);
-                color: $placeholder-color;
 
+                -o-text-overflow: ellipsis;
+                -ms-text-overflow: ellipsis;
+                text-overflow: ellipsis;
             }
 
-            &:focus {outline: none; }
-     
-        }
+            #contactFormSubmitBtn {
+                align-self: center;
+                background-color: rgb(72, 170, 21);
+                font-family: $primary-font;
+                color: white;
+                text-decoration: none;
+                padding: 15px;
+                font-size: 0.8em;
+                display: flex;
 
-        .fieldInput {
-            align-items: center;
-            display: flex;
-            width: 70%;
-        }
+                &:hover img {
+                    transform: translateX(5px) translateY(2px);
+                }
 
-        #toggleSubjectsBtn {
-            color: black;
-            position: absolute;
-            left: calc(100% - 14px);
-            // transform: translateX(-14px) translateY(4px);
+                img {
+                    width: 25px;
+                    margin-left: 3px;
+                    transition: all 0.2s ease-out;
+                    transform: translateY(2px);
+                    object-fit: scale-down;
             
-        }
+                }
+            }
 
-        #contactFormSubject {
-            .colouredLine {
-                background-color: black;
+            #sliderHeader {
+                margin: 1em;
+                margin-top: 40px;
+            }
+
+            #budgetSlider {
+                width: 100%;
+            }
+
+            h1 {
+                font-family: $primary-font;
+                text-align: center;
             }
 
             input {
-                // flex-grow: 1;
-                width: calc(100% - 20px);
-                -o-text-overflow: ellipsis;
-    -ms-text-overflow: ellipsis;
-    text-overflow: ellipsis;
+                border: none;
+                padding-left: 0.7em;
+
+
+                &::placeholder {
+                    font-family: $primary-font;
+                    color: $placeholder-color;
+                }
+
+                &:focus {outline: none; }
+        
             }
 
             .fieldInput {
+                align-items: center;
                 display: flex;
+                width: 70%;
+            }
+
+            #toggleSubjectsBtn {
+                color: black;
+                position: absolute;
+                left: calc(100% - 14px);
+            }
+
+            #contactFormSubject {
+                .colouredLine {
+                    background-color: black;
+                }
+
+                input {
+                    width: calc(100% - 20px);
+                    -o-text-overflow: ellipsis;
+                    -ms-text-overflow: ellipsis;
+                    text-overflow: ellipsis;
+                }
+
+                .fieldInput {
+                    display: flex;
+                    position: relative;
+                }
+            }
+
+            #contactFormName {
+                div.fieldInput {
+                    input {
+                        width: 100%;
+                    }
+                }
+
+                .colouredLine {
+                    background-color: black;
+                }
+            }
+
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+
+            #contactFormBudget {
+                margin-bottom: 3em;
                 position: relative;
+            }
+
+
+
+            & > section:not(#contactFormBudget) {
+                display: flex;
+                border-bottom: rgb(179, 179, 179) 1px solid;
+                padding-bottom: 10px;
+                margin: 0 0.7em 0 0.7em;
+                margin-top: 66px;
+                position: relative;
+                background-color: white;
+                z-index: 1;
+                .fieldInput {
+                    flex-grow: 1;
+                }
+
+                
+            }
+        
+            label {
+                width: 80px;
+                font-family: $primary-font;
+                font-size: 0.9em;
+                overflow: hidden;
+                transition: 1s margin;
+                background-color: white;
+
+                &.fieldFilled {
+                    margin-left: -90px;
+                }
+            }
+        
+            #subjectOptions {
+                max-height: 0px;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                margin: 10px 0.7em 0 0.7em;
+                padding-left: 0.6em;
+                overflow: hidden;
+
+                a {
+                    text-decoration: none;
+                    font-family: $primary-font;
+                    font-size: 0.9em;
+                    color: $placeholder-color;
+                    white-space: nowrap;
+                    font-weight: 300;
+
+                    &:hover {
+                        color: rgb(100, 100, 100);
+                    }
+
+                    &.activeSubject {
+                        color: rgb(100, 100, 100);
+                    }
+                
+                    transition: color 0.1s;
+                }
+
+                .subjectOption {
+                    display: flex;
+                    align-items: center;
+
+                    .separator {
+                        margin-left: 5px;
+                        margin-right: 5px;
+                        background-color: rgb(191, 191, 191);
+                        height: 13px;
+                    }
+                }
+            }
+        }
+    }
+
+    .threeItemRow {
+        display: flex;
+        margin: 0 0.7em 0 0.7em;
+        justify-content: space-between;
+        margin-top: 56px;
+
+        section {
+            width: 32%;
+            display: flex;
+            border-bottom: rgb(179, 179, 179) 1px solid;
+            padding-bottom: 10px;
+            position: relative;
+
+            input {
+                width: 100%;
+            }
+
+            .colouredLine {
+                background-color: black;
+            }
+            
+        }
+    }
+
+    #toggleSubjectsBtn i {
+        transition: all 0.4s;
+    }
+
+    .colouredLine {
+        background-color: white;
+        width: 0%;
+        height: 1px;
+        top: 100%;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        transition: 0.5s width;
+
+        &.expanded {
+            width: 100%;
+        }
+    }
+
+    .showingSubscribeButton:not(.vertical) {
+        transform: translateX(-75px);
+    }
+    .subscribeBtn {
+        width: 130px !important;
+    }
+    #newsletterPrompt {
+        text-align: center;
+        background-color: lightblue;
+        font-family: $primary-font;
+        padding: 10em 0 10em 0;
+        background: linear-gradient(90deg, rgb(46, 0, 63), rgb(159, 27, 84));
+        color: white;
+        margin-top: 2em;
+
+        h2 {
+            font-weight: 100;
+        }
+        
+        #newsletterEmail {
+            position: relative;
+            margin: auto;
+
+            input {
+                font-size: 0.9em;
+                font-weight: 300;
             }
         }
 
-        #contactFormName {
-            div.fieldInput {
-                input {
+        .errorEmail {
+            width: 50%;
+            text-align: left;
+            margin-top: 8px;
+            padding-left: 9.33px;
+            color: #eb0028;
+            font-size: 14px;
+            display: none;
+            position: absolute;
+            transform: translateX(50%);
+        }
+
+        .fieldInput {
+            border-bottom: 1px solid hsla(0, 0%, 100%, 0.5);
+            width: 50%;
+            margin: auto;
+            padding-bottom: 0.5em;
+            position: relative;
+            width: 75%;
+
+            
+            .clearAndClose {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 100%;
+                transform: translateX(-100%);
+                color: rgb(191, 191, 191);
+            }
+
+            .colouredLine {
+                background-color: white;
+                width: 0%;
+                height: 1px;
+                top: 100%;
+                left: 50%;
+                position: absolute;
+                transform: translateX(-50%);
+                transition: 0.5s width;
+
+                &.expanded {
                     width: 100%;
                 }
             }
 
-            .colouredLine {
-                background-color: black;
-            }
-        }
-
-        display: flex;
-        flex-direction: column;
-        margin: auto;
-
-        #contactFormBudget {
-            margin-bottom: 3em;
-            position: relative;
-        }
-
-
-
-        & > section:not(#contactFormBudget) {
-            display: flex;
-            border-bottom: rgb(179, 179, 179) 1px solid;
-            padding-bottom: 10px;
-            margin: 0 0.7em 0 0.7em;
-            margin-top: 66px;
-            position: relative;
-            background-color: white;
-            z-index: 1;
-            .fieldInput {
-                flex-grow: 1;
-            }
-
-            
-        }
-    
-        section {
-            // overflow: hidden;
-        }
-
-        label {
-            width: 80px;
-            font-family: $primary-font;
-            // margin-right: 15px;
-            font-size: 0.9em;
-            overflow: hidden;
-            transition: 1s margin;
-            background-color: white;
-
-            &.fieldFilled {
-                // width: 0;
-                margin-left: -90px;
-            }
-        }
-    
-        #subjectOptions {
-            // display: none;
-            // display: none;
-            
-            max-height: 0px;
-            
-            justify-content: flex-start;
-            flex-wrap: wrap;
-            margin: 10px 0.7em 0 0.7em;
-            padding-left: 0.6em;
-            overflow: hidden;
-            // transition: 0.4s ease-in max-height;
-
-            a {
-                text-decoration: none;
-                font-family: $primary-font;
-                font-size: 0.9em;
-                // color: rgb(191, 191, 191);
-                color: $placeholder-color;
-                white-space: nowrap;
-                font-weight: 300;
-
-                &:hover {
-                    color: rgb(100, 100, 100);
-                }
-
-                &.activeSubject {
-                    color: rgb(100, 100, 100);
-                }
-            
-                transition: color 0.1s;
-            }
-
-            .subjectOption {
-                display: flex;
-                align-items: center;
-
-                .separator {
-                    margin-left: 5px;
-                    margin-right: 5px;
-                    background-color: rgb(191, 191, 191);
-                    height: 13px;
-                }
-            }
-        }
-    }
-}
-
-.threeItemRow {
-    display: flex;
-    margin: 0 0.7em 0 0.7em;
-    justify-content: space-between;
-    margin-top: 56px;
-
-    section {
-        width: 32%;
-        display: flex;
-        border-bottom: rgb(179, 179, 179) 1px solid;
-        padding-bottom: 10px;
-        position: relative;
-
-        input {
-            width: 100%;
-        }
-
-        .colouredLine {
-            background-color: black;
-        }
-        
-    }
-}
-
-#toggleSubjectsBtn i {
-    transition: all 0.4s;
-}
-
-.colouredLine {
-    background-color: white;
-    width: 0%;
-    height: 1px;
-    top: 100%;
-    left: 50%;
-    position: absolute;
-    transform: translateX(-50%);
-    transition: 0.5s width;
-
-    &.expanded {
-        width: 100%;
-    }
-}
-
-.showingSubscribeButton:not(.vertical) {
-    transform: translateX(-75px);
-}
-.subscribeBtn {
-    width: 130px !important;
-}
-#newsletterPrompt {
-    text-align: center;
-    background-color: lightblue;
-    font-family: $primary-font;
-    // padding: 10em;
-    padding: 10em 0 10em 0;
-    background: linear-gradient(90deg, rgb(46, 0, 63), rgb(159, 27, 84));
-    color: white;
-    margin-top: 2em;
-
-    h2 {
-        font-weight: 100;
-    }
-    
-    #newsletterEmail {
-        position: relative;
-        margin: auto;
-
-        input {
-            font-size: 0.9em;
-            font-weight: 300;
-        }
-    }
-
-    .errorEmail {
-        width: 50%;
-        text-align: left;
-        margin-top: 8px;
-        padding-left: 9.33px;
-        color: #eb0028;
-        font-size: 14px;
-        display: none;
-        position: absolute;
-        transform: translateX(50%);
-    }
-
-    .fieldInput {
-        border-bottom: 1px solid hsla(0, 0%, 100%, 0.5);
-        width: 50%;
-        margin: auto;
-        padding-bottom: 0.5em;
-        position: relative;
-        width: 75%;
-
-        
-        .clearAndClose {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 100%;
-            transform: translateX(-100%);
-            color: rgb(191, 191, 191);
-        }
-
-        .colouredLine {
-            background-color: white;
-            width: 0%;
-            height: 1px;
-            top: 100%;
-            left: 50%;
-            position: absolute;
-            transform: translateX(-50%);
-            transition: 0.5s width;
-
-            &.expanded {
+            .emailDropdown {
+                background-color: white;
+                position: absolute;
+                top: 100%;
                 width: 100%;
+                z-index: 1;
+                color: rgb(103, 103, 103);
+                text-align: left;
+                height: 0;
+                transition: 0.2s height;
+                overflow: hidden;
+
+                .emailOption {
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    padding-left: 10px;
+                    cursor: pointer;
+
+                    .customEmail {
+                        color: RGB(177, 177, 177);
+                    }
+
+                    &.keyboardSelectedEmailOption {
+                        background: rgb(246, 246, 246);
+                    }
+
+                    &:hover {
+                        background: rgb(246, 246, 246);
+                    }
+
+                }
+
             }
         }
 
-        .emailDropdown {
-            background-color: white;
-            position: absolute;
-            top: 100%;
+        input {
             width: 100%;
-            z-index: 1;
-            color: rgb(103, 103, 103);
-            text-align: left;
-            height: 0;
-            transition: 0.2s height;
-            overflow: hidden;
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-family: $primary-font;
+            padding-left: 0.7em;
 
-            .emailOption {
-                height: 40px;
-                display: flex;
-                align-items: center;
-                padding-left: 10px;
-                cursor: pointer;
-
-                .customEmail {
-                    color: RGB(177, 177, 177);
-                }
-
-                &.keyboardSelectedEmailOption {
-                    background: rgb(246, 246, 246);
-                }
-
-                &:hover {
-                    background: rgb(246, 246, 246);
-                }
-
+            &:focus {
+                outline: none;
             }
 
+            &::placeholder {
+                color: rgb(191, 191, 191);;
+                font-family: $primary-font;
+
+            }
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            margin-bottom: 2em;
+        }
+
+        #newsletterPrompt {
+            display: inline-block;
+
+
         }
     }
 
-    input {
-        width: 100%;
-        background-color: transparent;
-        border: none;
-        color: white;
-        font-family: $primary-font;
-        padding-left: 0.7em;
-
-        &:focus {
-            outline: none;
-        }
-
-        &::placeholder {
-            color: rgb(191, 191, 191);;
-            font-family: $primary-font;
-
-        }
-    }
-
-    h1 {
-        font-size: 3em;
-        margin-bottom: 0.5em;
-    }
-
-    h2 {
-        margin-bottom: 2em;
-    }
-
-    #newsletterPrompt {
-        display: inline-block;
-
-
-    }
-}
-
-#footerBottom {
-    display: flex;
-    width: 95%;
-    justify-content: space-between;
-    margin: auto;
-    font-family: $primary-font;
-    font-size: 0.74em;
-
-    #footerBottomLeft, #footerBottomRight {
-        margin: 2em 0 2em 0;
-    }
-
-    #footerBottomRight {
-        width: 50%;
-    }
-
-}
-
-#footerTop {
-    display: flex;
-    justify-content: space-between;
-    width: 95%;
-    margin: auto;
-    font-family: $primary-font;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    align-items: center;
-
-    #footerTopLeft {
-        padding-top: 30px;
-        padding-bottom: 20px;
+    #footerBottom {
         display: flex;
-        // align-items: center;
-
-        span {
-            display: flex;
-            // align-items: center;
-            margin-right: 10px;
-        }
-
-        img {
-            width: 25px;
-            margin-right: 10px;
-        }
-    }
-
-    #footerTopRight {
-        display: flex;
-        width: 38em;
+        width: 95%;
         justify-content: space-between;
+        margin: auto;
+        font-family: $primary-font;
+        font-size: 0.74em;
+
+        #footerBottomLeft, #footerBottomRight {
+            margin: 2em 0 2em 0;
+        }
+
+        #footerBottomRight {
+            width: 50%;
+        }
+
+    }
+
+    #footerTop {
+        display: flex;
+        justify-content: space-between;
+        width: 95%;
+        margin: auto;
+        font-family: $primary-font;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         align-items: center;
+
+        #footerTopLeft {
+            padding-top: 30px;
+            padding-bottom: 20px;
+            display: flex;
+
+            span {
+                display: flex;
+                margin-right: 10px;
+            }
+
+            img {
+                width: 25px;
+                margin-right: 10px;
+            }
+        }
+
+        #footerTopRight {
+            display: flex;
+            width: 38em;
+            justify-content: space-between;
+            align-items: center;
+
+            .separator {
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+
+    .socialMedia {
+        display: flex;
+        width: 7em;
+        justify-content: space-between;
+
+        .iconSocialMedia {
+            color: rgb(147, 147, 147);
+            font-size: 1.7em;
+            transition: color 0.4s;
+        }
+
+        .iconSocialMedia:hover {
+            color: rgb(100, 100, 100);
+        }
+    }
+
+
+    .fieldError {
+        font-family: $primary-font;
+        font-size: 0.9em;
+        color: red;
+        transform: translateY(-100% );
+        opacity: 0;
+        transition: 1s all;
+    }
+
+    .errorContainer {
+        position: absolute;
+        top: 100%;
+        overflow: hidden;
+        height: 30px;
+    }
+
+    .displayError {
+        // display: block;
+        transform: translateY(10px);
+        opacity: 1;
+    }
+
+    .telNo {
+        font-size: 16px;
+        a {
+            text-decoration: none;
+            color: #09c;
+            transition: all 0.4s;
+
+            &:hover {
+                opacity: 0.65;
+            }
+        }
+    }
+
+
+
+    .separator {
+        width: 1px;
+        background-color: black;
+        height: 17px;
+        display: inline-block;
+        
+    }
+
+
+
+    .siteMapLinks {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a {
+            text-decoration: none;
+            color: rgb(147, 147, 147);
+
+            &:hover {
+                color: rgb(100, 100, 100);
+            }
+
+            transition: color 0.4s;
+        }
 
         .separator {
             background-color: rgba(0, 0, 0, 0.1);
         }
     }
-}
 
-.socialMedia {
-    display: flex;
-    width: 7em;
-    justify-content: space-between;
 
-    .iconSocialMedia {
-        color: rgb(147, 147, 147);
-        font-size: 1.7em;
-        transition: color 0.4s;
+    .siteMapLinkContainer {
+        padding: 5px;
+        text-align: center;
     }
 
-    .iconSocialMedia:hover {
-        color: rgb(100, 100, 100);
+    /* Hide everything */
+
+    input[type=range]::-ms-track {
+        width: 100%;
+        height: 100%;
+        -webkit-appearance: none;
+        margin: 0px;
+        padding: 0px;
+        border: 0 none;
+        background: transparent;
+        color: transparent;
+        overflow: visible;
     }
-}
-
-
-.fieldError {
-    font-family: $primary-font;
-    font-size: 0.9em;
-    color: red;
-    transform: translateY(-100% );
-    opacity: 0;
-    transition: 1s all;
-}
-
-.errorContainer {
-    position: absolute;
-    top: 100%;
-    overflow: hidden;
-    height: 30px;
-}
-
-.displayError {
-    // display: block;
-    transform: translateY(10px);
-    opacity: 1;
-}
-
-.telNo {
-    font-size: 16px;
-    a {
-        text-decoration: none;
-        color: #09c;
-        transition: all 0.4s;
-
-        &:hover {
-            opacity: 0.65;
-        }
-    }
-}
-
-
-
-.separator {
-    width: 1px;
-    background-color: black;
-    height: 17px;
-    display: inline-block;
     
-}
-
-
-
-.siteMapLinks {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    a {
-        text-decoration: none;
-        color: rgb(147, 147, 147);
-
-        &:hover {
-            color: rgb(100, 100, 100);
-        }
-
-        transition: color 0.4s;
+    input[type=range]::-moz-range-track {
+        width: 100%;
+        height: 100%;
+        -moz-appearance: none;
+        margin: 0px;
+        padding: 0px;
+        border: 0 none;
+        background: transparent;
+        color: transparent;
+        overflow: visible;
+    }
+    
+    input[type=range] {
+        width: 100%;
+        height: 100%;
+        -webkit-appearance: none;
+        margin: 0px;
+        padding: 0px;
+        border: 0 none;
+        background: transparent;
+        color: transparent;
+        overflow: visible;
+    }
+    
+    input[type=range]:focus::-webkit-slider-runnable-track {
+        background: transparent;
+        border: transparent;
+    }
+    
+    input[type=range]:focus {
+        outline: none;
+    }
+    
+    /* Make the thumbs the same size as your custom sliderthumb. They will not be visible but they will be draggable. */
+    input[type=range]::-ms-thumb {
+        width: 40px;
+        height: 40px;
+        border-radius: 0px;
+        border: 0 none;
+        background: transparent;
+    }
+    
+    input[type=range]::-moz-range-thumb {
+        width: 40px;
+        height: 40px;
+        border-radius: 0px;
+        border: 0 none;
+        background: transparent;
+    }
+    
+    input[type=range]::-webkit-slider-thumb {
+        width: 40px;
+        height: 40px;
+        border-radius: 0px;
+        border: 0 none;
+        background: transparent;
+        -webkit-appearance: none;
+    }
+    
+    /* Eliminate the default appearance and tooltip behaviour that is peculiar to IE and Edge. */
+    input[type=range]::-ms-fill-lower {
+        background: transparent;
+        border: 0 none;
+    }
+    
+    input[type=range]::-ms-fill-upper {
+        background: transparent;
+        border: 0 none;
+    }
+    
+    input[type=range]::-ms-tooltip {
+        display: none;
     }
 
-    .separator {
-        background-color: rgba(0, 0, 0, 0.1);
-    }
-}
-
-
-.siteMapLinkContainer {
-    padding: 5px;
-    text-align: center;
-}
-
-/* Hide everything */
-
-input[type=range]::-ms-track {
-    width: 100%;
-    height: 100%;
-    -webkit-appearance: none;
-    margin: 0px;
-    padding: 0px;
-    border: 0 none;
-    background: transparent;
-    color: transparent;
-    overflow: visible;
-  }
-  
-  input[type=range]::-moz-range-track {
-    width: 100%;
-    height: 100%;
-    -moz-appearance: none;
-    margin: 0px;
-    padding: 0px;
-    border: 0 none;
-    background: transparent;
-    color: transparent;
-    overflow: visible;
-  }
-  
-  input[type=range] {
-    width: 100%;
-    height: 100%;
-    -webkit-appearance: none;
-    margin: 0px;
-    padding: 0px;
-    border: 0 none;
-    background: transparent;
-    color: transparent;
-    overflow: visible;
-  }
-  
-  input[type=range]:focus::-webkit-slider-runnable-track {
-    background: transparent;
-    border: transparent;
-  }
-  
-  input[type=range]:focus {
-    outline: none;
-  }
-  
-  /* Make the thumbs the same size as your custom sliderthumb. They will not be visible but they will be draggable. */
-  input[type=range]::-ms-thumb {
-    width: 40px;
-    height: 40px;
-    border-radius: 0px;
-    border: 0 none;
-    background: transparent;
-  }
-  
-  input[type=range]::-moz-range-thumb {
-    width: 40px;
-    height: 40px;
-    border-radius: 0px;
-    border: 0 none;
-    background: transparent;
-  }
-  
-  input[type=range]::-webkit-slider-thumb {
-    width: 40px;
-    height: 40px;
-    border-radius: 0px;
-    border: 0 none;
-    background: transparent;
-    -webkit-appearance: none;
-  }
-  
-  /* Eliminate the default appearance and tooltip behaviour that is peculiar to IE and Edge. */
-  input[type=range]::-ms-fill-lower {
-    background: transparent;
-    border: 0 none;
-  }
-  
-  input[type=range]::-ms-fill-upper {
-    background: transparent;
-    border: 0 none;
-  }
-  
-  input[type=range]::-ms-tooltip {
-    display: none;
-  }
-
-  /* The .slider and .slidervertical classes are for the range inputs. Set the z-index high so its on top. */
-.slider,
-.slidervertical {
-  position: absolute;
-  left: 0;
-  top: 0;
-  overflow: visible;
-  z-index: 100;
-}
-
-/* slidershell exists only to provide a positioning context for the range input and other elements.*/
-.slidershell {
-  border: 0 none;
-  position: relative;
-  left: 0;
-  top: 0;
-  overflow: visible;
-  width: calc(100% - 16px);
-  margin: auto;
-}
-
-/* .slidertrack is the visible track on which the user drags the thumb button. */
-.slidertrack {
-    border-top: 1px rgb(179, 179, 179) solid;
-    position: absolute;
-    width: 100%;
-}
-
-/* .sliderfill adds color (or a gradient as seen here) to the track as the user drags the thumb. */
-.sliderfill {
-  position: absolute;
-  pointer-events: none;
-  background: #00767f;
-  background: linear-gradient(90deg, rgb(44, 180, 62), rgb(147, 255, 19));
-  z-index: 1;
-  height: 4px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.sliderthumb {
-    width: 40px;
-    height: 40px;
-    z-index: 2;
-    background-color: white;
-    border: rgb(44, 180, 62) solid 4px;
-    border-radius: 50%;
+    /* The .slider and .slidervertical classes are for the range inputs. Set the z-index high so its on top. */
+    .slider,
+    .slidervertical {
     position: absolute;
     left: 0;
     top: 0;
+    overflow: visible;
+    z-index: 100;
+    }
+
+    /* slidershell exists only to provide a positioning context for the range input and other elements.*/
+    .slidershell {
+    border: 0 none;
+    position: relative;
+    left: 0;
+    top: 0;
+    overflow: visible;
+    width: calc(100% - 16px);
+    margin: auto;
+    }
+
+    /* .slidertrack is the visible track on which the user drags the thumb button. */
+    .slidertrack {
+        border-top: 1px rgb(179, 179, 179) solid;
+        position: absolute;
+        width: 100%;
+    }
+
+    /* .sliderfill adds color (or a gradient as seen here) to the track as the user drags the thumb. */
+    .sliderfill {
+    position: absolute;
+    pointer-events: none;
+    background: #00767f;
+    background: linear-gradient(90deg, rgb(44, 180, 62), rgb(147, 255, 19));
+    z-index: 1;
+    height: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    }
+
+    .sliderthumb {
+        width: 40px;
+        height: 40px;
+        z-index: 2;
+        background-color: white;
+        border: rgb(44, 180, 62) solid 4px;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        pointer-events: none;
+
+    }
+
+    /* .slidervalue can be styled as you see fit */
+    .slidervalue {
+    height: 40px;
+    line-height: 40px;
+    color: rgb(113, 113, 113);
+    font-family: $primary-font;
+    font-size: 0.95em;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    border: 0 none;
     padding: 0;
     margin: 0;
     text-align: center;
     pointer-events: none;
-
-}
-
-/* .slidervalue can be styled as you see fit */
-.slidervalue {
-  height: 40px;
-  line-height: 40px;
-  color: rgb(113, 113, 113);
-  font-family: $primary-font;
-  font-size: 0.95em;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  border: 0 none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  pointer-events: none;
-}
-
-table {
-    width: 100%;
-}
-
-footer {
-    margin: auto;
-
-    #flagAndText {
-        font-size: 16px;
-        color: rgba(0, 0, 0, 0.8);
-        text-align: center;
-        white-space: nowrap;
     }
 
-    .openingHours {
-        font-size: 14px;
-        color: rgb(34, 34, 34);
-    }
-}
-
-/* Media query stuff for form */
-
-
-@media screen and (max-width: 1340px) {
-
-    #footerBottom {
-        flex-direction: column;
-
-        #footerBottomLeft {
-            text-align: center;
-            order: 2;
-        }
-
-        #footerBottomRight {
-            order: 1;
-            width: 95%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-    }
-
-    
-    #rowOne, .reg {
-        margin-bottom: 20px;
-    }
-
-    #footerTop {
-        flex-direction: column;
-
-        #footerTopRight {
-            flex-direction: column;
-            width: unset;
-
-            .telNo {
-                font-size: 20px;
-                margin-bottom: 20px;
-            }
-
-            .openingHours {
-                margin-bottom: 20px;
-            }
-
-            .socialMedia {
-                margin-bottom: 20px;
-                width: 10em;
-            }
-            .separator {
-                display: none;
-            }
-        }
-    }
-
-    #footerTop #footerTopLeft span {
-        // font-size: 1.0em; // Redundant...always?
-        display: flex;
-        flex-direction: column;
-        margin-right: 0;
-        // img {
-        //     display: none;
-        // }
-    }
-}
-
-
-@media screen and (max-width: 1024px) {
-    #contactFormSection form#contactForm, header p {
-        width: 85%;
-    }
-
-    header {
+    table {
         width: 100%;
-        p {
+    }
+
+    footer {
+        margin: auto;
+
+        #flagAndText {
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.8);
             text-align: center;
+            white-space: nowrap;
         }
-    }
-    
-    #newsletterPrompt {
-        h1 {
-            font-size: 2.5em;
+
+        .openingHours {
+            font-size: 14px;
+            color: rgb(34, 34, 34);
         }
     }
 
-    .threeItemRow {
-        flex-direction: column;
-        margin: 0 0.7em 0 0.7em;
-        section {
-            width: 100%;
-            margin-top: 45px;
+    /* Media query stuff for form */
+
+
+    @media screen and (max-width: 1340px) {
+
+        #footerBottom {
+            flex-direction: column;
+
+            #footerBottomLeft {
+                text-align: center;
+                order: 2;
+            }
+
+            #footerBottomRight {
+                order: 1;
+                width: 95%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+        }
+
+        
+        #rowOne, .reg {
+            margin-bottom: 20px;
+        }
+
+        #footerTop {
+            flex-direction: column;
+
+            #footerTopRight {
+                flex-direction: column;
+                width: unset;
+
+                .telNo {
+                    font-size: 20px;
+                    margin-bottom: 20px;
+                }
+
+                .openingHours {
+                    margin-bottom: 20px;
+                }
+
+                .socialMedia {
+                    margin-bottom: 20px;
+                    width: 10em;
+                }
+                .separator {
+                    display: none;
+                }
+            }
+        }
+
+        #footerTop #footerTopLeft span {
+            display: flex;
+            flex-direction: column;
+            margin-right: 0;
         }
     }
-}
 
-@media screen and (max-width: 850px) {
-    #newsletterPrompt {
-        h1 {
-            font-size: 2em;
-        }
-    }
-}
 
-@media screen and (max-width: 850px) {
-    #newsletterPrompt {
-        padding-left: 1em;
-        padding-right: 1em;
-
-        .fieldInput {
+    @media screen and (max-width: 1024px) {
+        #contactFormSection form#contactForm, header p {
             width: 85%;
         }
-    }
-}
 
-button.conceptaiButton.showing.vertical {
-    display: none;
-}
-
-.clearAndClose img {
-    height: 11px;
-}
-
-
-@media screen and (min-width: 735px) {
-    .showingSubscribeButton {
-        width: 33% !important;
-    }
-    
-    #footerTop #footerTopLeft span {
-        // align-items: center;
-    }
-}
-
-.conceptaiButton {
-    // width: unset !important;
-    img {
-        width: 25px;
-        transition: all 0.2s ease-out;
-        transform: translateY(2px);
-        margin-left: 3px;
-    
+        header {
+            width: 100%;
+            p {
+                text-align: center;
+            }
+        }
         
-    }
+        #newsletterPrompt {
+            h1 {
+                font-size: 2.5em;
+            }
+        }
 
-
-
-    &:hover {
-        img {
-            transform: translateX(5px) translateY(2px);
+        .threeItemRow {
+            flex-direction: column;
+            margin: 0 0.7em 0 0.7em;
+            section {
+                width: 100%;
+                margin-top: 56px;
+            }
+        
+            #contactFormEmail, #contactFormPhone {
+                margin-top: 66px;
+            }
         }
     }
-}
 
-.copyright {
-    color: rgb(153, 153, 153);
-}
-
-button.conceptaiButton.hidden {
-    left: 150%;
-    position: absolute;
-    top: 100%;
-    transform: translateY(-100%);
-    padding: 0 1em;
-    height: 40px;
-    width: 110px;
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
-    // border-radius: 2px;
-    opacity: 0;
-    transition: all 1s;
-    pointer-events: none;
-}
-
-button.conceptaiButton.showing {
-    display: block;
-    opacity: 1.0;
-    left: calc(100% + 20px);
-    position: absolute;
-    top: 100%;
-    transform: translateY(-100%);
-    padding: 0 1em;
-    height: 40px;
-    width: 110px;
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
-    // border-radius: 2px;
-    transition: all 1s;
-    cursor: pointer;
-}
-
-.newsletterCentered {
-    position: relative;
-    font-family: $primary-font;
-
-    h2, h1 {
-        font-weight: 400;
+    @media screen and (max-width: 850px) {
+        #newsletterPrompt {
+            h1 {
+                font-size: 2em;
+            }
+        }
     }
-}
 
-#sliderHeader {
-    font-family: $primary-font;
-    text-align: center;
-    font-size: 0.9em;
-}
+    @media screen and (max-width: 850px) {
+        #newsletterPrompt {
+            padding-left: 1em;
+            padding-right: 1em;
 
-button.conceptaiButton.hidden.vertical {
-    opacity: 0;
-    left: 50%;
-    top: 100%;
-    transform: translateY(285%) translateX(-50%);
-    padding: 0 1em;
-    height: 40px;
-    width: 110px;
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
-    // border-radius: 2px;
-    transition: all 1s;
-    pointer-events: none;
-}
+            .fieldInput {
+                width: 85%;
+            }
+        }
+    }
 
-button.conceptaiButton.showing.vertical {
-    opacity: 1.0;
-    left: 50%;
-    top: 60%;
-    transform: translateY(285%) translateX(-50%);
-    padding: 0 1em;
-    height: 40px;
-    width: 110px;
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
-    // border-radius: 2px;
-    transition: all 1s;
-    pointer-events: all;
-}
-
-@media screen and (max-width: 735px) {
-    // 
-    
-    
-    
     button.conceptaiButton.showing.vertical {
-        display: block;
-    }
-
-    #newsletterPrompt .fieldInput {
-        width: 85% !important;
-    }
-
-    button.conceptaiButton.hidden:not(.vertical) {
-        display: none !important;
-    }
-
-    button.conceptaiButton.showing:not(.vertical) {
-        display: none !important;
-    }
-
-    .nonmobile {
         display: none;
     }
 
-
-
-    .showingSubscribeButton {
-        width: 33% !important;
-        transform: translateX(0) !important;
-    
+    .clearAndClose img {
+        height: 11px;
     }
 
 
+    @media screen and (min-width: 735px) {
+        .showingSubscribeButton {
+            width: 33% !important;
+        }
+    }
 
-    
+    .conceptaiButton {
+        img {
+            width: 25px;
+            transition: all 0.2s ease-out;
+            transform: translateY(2px);
+            margin-left: 3px;
+        }
 
-}
+        &:hover {
+            img {
+                transform: translateX(5px) translateY(2px);
+            }
+        }
+    }
+
+    .copyright {
+        color: rgb(153, 153, 153);
+    }
+
+    button.conceptaiButton.hidden {
+        left: 150%;
+        position: absolute;
+        top: 100%;
+        transform: translateY(-100%);
+        padding: 0 1em;
+        height: 40px;
+        width: 110px;
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+        opacity: 0;
+        transition: all 1s;
+        pointer-events: none;
+    }
+
+    button.conceptaiButton.showing {
+        display: block;
+        opacity: 1.0;
+        left: calc(100% + 20px);
+        position: absolute;
+        top: 100%;
+        transform: translateY(-100%);
+        padding: 0 1em;
+        height: 40px;
+        width: 110px;
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+        transition: all 1s;
+        cursor: pointer;
+    }
+
+    .newsletterCentered {
+        position: relative;
+        font-family: $primary-font;
+
+        h2, h1 {
+            font-weight: 400;
+        }
+    }
+
+    #sliderHeader {
+        font-family: $primary-font;
+        text-align: center;
+        font-size: 0.9em;
+    }
+
+    button.conceptaiButton.hidden.vertical {
+        opacity: 0;
+        left: 50%;
+        top: 100%;
+        transform: translateY(285%) translateX(-50%);
+        padding: 0 1em;
+        height: 40px;
+        width: 110px;
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+        transition: all 1s;
+        pointer-events: none;
+    }
+
+    button.conceptaiButton.showing.vertical {
+        opacity: 1.0;
+        left: 50%;
+        top: 60%;
+        transform: translateY(285%) translateX(-50%);
+        padding: 0 1em;
+        height: 40px;
+        width: 110px;
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+        transition: all 1s;
+        pointer-events: all;
+    }
+
+    @media screen and (max-width: 735px) {
+        button.conceptaiButton.showing.vertical {
+            display: block;
+        }
+
+        #newsletterPrompt .fieldInput {
+            width: 85% !important;
+        }
+
+        button.conceptaiButton.hidden:not(.vertical) {
+            display: none !important;
+        }
+
+        button.conceptaiButton.showing:not(.vertical) {
+            display: none !important;
+        }
+
+        .nonmobile {
+            display: none;
+        }
+
+        .showingSubscribeButton {
+            width: 33% !important;
+            transform: translateX(0) !important;
+        
+        }
+    }
 
 
-.flagAndTextContainer {
-    display: flex;
-    align-items: center;
-}
+    .flagAndTextContainer {
+        display: flex;
+        align-items: center;
+    }
 
-svg {
-    width: 40px; height: 40px;
-    transform: rotate(-90deg);
-    border-radius: 50%;
-    position: absolute;
-    z-index: 100;
-}
+    svg {
+        width: 40px; height: 40px;
+        transform: rotate(-90deg);
+        border-radius: 50%;
+        position: absolute;
+        z-index: 100;
+    }
 
-circle:not(#outline) {
-    fill: white;
-    stroke: #5bce11;
-    stroke-width: 32;
+    circle:not(#outline) {
+        fill: white;
+        stroke: #5bce11;
+        stroke-width: 32;
 
-    /* This is where the % is! */
-    stroke-dasharray: 50 100; /* for 38% */
-}
+        /* This is where the % is! */
+        stroke-dasharray: 50 100; /* for 38% */
+    }
 
-circle#outline {
-    fill: transparent;
-    stroke: rgb(44, 180, 62);
-    stroke-width: 4;
+    circle#outline {
+        fill: transparent;
+        stroke: rgb(44, 180, 62);
+        stroke-width: 4;
+    }
 
-}
+    @-webkit-keyframes ConceptaiGradient {
+        0%{background-position:9% 0%}
+        50%{background-position:92% 100%}
+        100%{background-position:9% 0%}
+    }
+    @-moz-keyframes ConceptaiGradient {
+        0%{background-position:9% 0%}
+        50%{background-position:92% 100%}
+        100%{background-position:9% 0%}
+    }
+    @-o-keyframes ConceptaiGradient {
+        0%{background-position:9% 0%}
+        50%{background-position:92% 100%}
+        100%{background-position:9% 0%}
+    }
+    @keyframes ConceptaiGradient {
+        0%{background-position:9% 0%}
+        50%{background-position:92% 100%}
+        100%{background-position:9% 0%}
+    }
 
+    #newsletterPrompt {
+        -webkit-animation: ConceptaiGradient 10s ease infinite;
+        -moz-animation: ConceptaiGradient 10s ease infinite;
+        -o-animation: ConceptaiGradient 10s ease infinite;
+        animation: ConceptaiGradient 10s ease infinite;
+        background-size: 400% 400%
+    }
+    #contactFormSection #contactForm #contactFormBudget {
+        overflow: visible;
+    }
 
-
-@-webkit-keyframes ConceptaiGradient {
-    0%{background-position:9% 0%}
-    50%{background-position:92% 100%}
-    100%{background-position:9% 0%}
-}
-@-moz-keyframes ConceptaiGradient {
-    0%{background-position:9% 0%}
-    50%{background-position:92% 100%}
-    100%{background-position:9% 0%}
-}
-@-o-keyframes ConceptaiGradient {
-    0%{background-position:9% 0%}
-    50%{background-position:92% 100%}
-    100%{background-position:9% 0%}
-}
-@keyframes ConceptaiGradient {
-    0%{background-position:9% 0%}
-    50%{background-position:92% 100%}
-    100%{background-position:9% 0%}
-}
-
-#newsletterPrompt {
-    -webkit-animation: ConceptaiGradient 10s ease infinite;
-    -moz-animation: ConceptaiGradient 10s ease infinite;
-    -o-animation: ConceptaiGradient 10s ease infinite;
-    animation: ConceptaiGradient 10s ease infinite;
-    background-size: 400% 400%
-}
-#contactFormSection #contactForm #contactFormBudget {
-    overflow: visible;
-}
-
-
-
-
-.fieldLabelContainer {
-    overflow: hidden;
-
-}
-
-
-// @keyframes slideDown {
-    
-// 	0% {
-//        // transform: translateY(-200%);
-//        // height: 0;
-//     //    margin-top: -2%;
-//         transform: scaleY(0);
-// 	}
-
-// 	100% {
-//         //transform: translateY(0%);
-//         // margin-top: 0%;
-//         // transform: translateY(0);
-//         transform: scaleY(1);
-// 	}
-// }
-
-// @keyframes slideUp {
-//  	0% {
-//         // transform: translateY(0%);
-//         transform: scaleY(1);
-//     }	
-    
-//     100% {
-//         // transform: translateY(-200%);     
-//         transform: scaleY(0);
-           
-// 	}
-// }
-
-
-.subjectOptionPrompt {
-    width: 100%;
-    font-family: $primary-font;
-    font-size: 0.9em;
-    margin-bottom: 10px;
-}
-
-#subjectOptions {
-    display: flex;
-    transition: max-height 0.5s ease;
-    // padding-top: 10px;
-    z-index: 100;
-}
-
-
-  .subjectOptionsDisplayed {
-    // display: flex;
-    // height: 25px !important;
-    // transition: max-height 1s ease-in;
-    transition: max-height 1s ease;
-   max-height: 200px !important;
-    // display: flex !important;
-    // transform: translateY(-100%);
-    // animation: slideDown .3s ease-in-out;
-    // animation-fill-mode: both;
-    //    display: flex !important;
-
+    .fieldLabelContainer {
+        overflow: hidden;
 
     }
-    
-.subjectOptionsHidden {
-    // display: flex;
-//    animation: slideUp .3s ease-in-out; 
-//    animation-fill-mode: both;
-//    display: none;
 
-}
+    .subjectOptionPrompt {
+        width: 100%;
+        font-family: $primary-font;
+        font-size: 0.9em;
+        margin-bottom: 10px;
+    }
 
+    #subjectOptions {
+        display: flex;
+        transition: max-height 0.5s ease;
+        z-index: 100;
+    }
 
-#subjectOptions.hidden {
-//    display: none;
+    .subjectOptionsDisplayed {
+        transition: max-height 1s ease;
+        max-height: 200px !important;
+    }
 
-    // display: flex;
-     //transform: translateY(calc(-100% - 20px));
-    // margin-top: -2% !important;
-}
-
-.subjectOptionsContainer {
-    // overflow: hidden;
+    /* Kill off vomit yellow */
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 30px white inset;
+    }
 }

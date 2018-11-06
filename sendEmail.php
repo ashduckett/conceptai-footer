@@ -7,7 +7,7 @@
     $enquiry = $_POST['enquiry'];
     $budget = $_POST['budget'];
 
-    $emailTo = 'ash.duckett@outlook.com';
+    $emailTo = 'hello@conceptai.co.uk';
     $emailSubject = 'Conceptai Enquiry';
 
     $message = '
@@ -22,13 +22,14 @@
             <p>They have a budget of ' . $budget . ' and here is their enquiry:</p> 
             <p>' . $enquiry . '</p>
         </body>
+    </html>
     ';
 
     $headers = 'MIME-Version: 1.0' . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
     // More headers
-    $headers .= 'From: <ashios.com>' . "\r\n";
+    $headers .= 'From: <conceptai.co.uk>' . "\r\n";
 
     mail($emailTo, $emailSubject, $message, $headers);
 

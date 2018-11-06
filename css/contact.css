@@ -1,5 +1,4 @@
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -8,26 +7,44 @@ body, html {
   overflow-x: hidden;
 }
 
-#contactFormSubmitBtn {
+#footerSection {
+  /* Hide everything */
+  /* Make the thumbs the same size as your custom sliderthumb. They will not be visible but they will be draggable. */
+  /* Eliminate the default appearance and tooltip behaviour that is peculiar to IE and Edge. */
+  /* The .slider and .slidervertical classes are for the range inputs. Set the z-index high so its on top. */
+  /* slidershell exists only to provide a positioning context for the range input and other elements.*/
+  /* .slidertrack is the visible track on which the user drags the thumb button. */
+  /* .sliderfill adds color (or a gradient as seen here) to the track as the user drags the thumb. */
+  /* .slidervalue can be styled as you see fit */
+  /* Media query stuff for form */
+  /* Kill off vomit yellow */
+}
+
+#footerSection * {
+  box-sizing: border-box;
+}
+
+#footerSection #contactFormSubmitBtn {
   text-align: center;
   width: 153px;
   height: 48px;
+  justify-content: center;
 }
 
-header {
+#footerSection header {
   font-family: "open-sans", "Gothic A1", sans-serif;
   width: 75%;
   margin: auto;
   text-align: center;
 }
 
-header h1 {
+#footerSection header h1 {
   margin-top: 1em;
   font-size: 1.56em;
   font-weight: 400;
 }
 
-header p {
+#footerSection header p {
   margin: 2em;
   margin-left: auto;
   margin-right: auto;
@@ -35,17 +52,17 @@ header p {
   font-weight: 300;
 }
 
-#contactFormEnquiry .colouredLine {
+#footerSection #contactFormEnquiry .colouredLine {
   background-color: black;
 }
 
-.newsletterMessage {
+#footerSection .newsletterMessage {
   padding-left: 0.7em;
   font-size: 0.9em;
   font-family: "open-sans", "Gothic A1", sans-serif;
 }
 
-#contactFormSection #contactForm {
+#footerSection #contactFormSection #contactForm {
   width: 75%;
   overflow: hidden;
   display: flex;
@@ -53,17 +70,17 @@ header p {
   margin: auto;
 }
 
-#contactFormSection #contactForm #contactFormCompany {
+#footerSection #contactFormSection #contactForm #contactFormCompany {
   z-index: 10;
   background-color: white;
 }
 
-#contactFormSection #contactForm section#contactFormEmail {
+#footerSection #contactFormSection #contactForm section#contactFormEmail {
   z-index: 9;
   background-color: white;
 }
 
-#contactFormSection #contactForm input {
+#footerSection #contactFormSection #contactForm input {
   width: 100%;
   font-size: 0.9em;
   font-weight: 300;
@@ -73,7 +90,7 @@ header p {
   text-overflow: ellipsis;
 }
 
-#contactFormSection #contactForm #contactFormSubmitBtn {
+#footerSection #contactFormSection #contactForm #contactFormSubmitBtn {
   align-self: center;
   background-color: #48aa15;
   font-family: "open-sans", "Gothic A1", sans-serif;
@@ -81,89 +98,91 @@ header p {
   text-decoration: none;
   padding: 15px;
   font-size: 0.8em;
+  display: flex;
 }
 
-#contactFormSection #contactForm #contactFormSubmitBtn:hover img {
+#footerSection #contactFormSection #contactForm #contactFormSubmitBtn:hover img {
   transform: translateX(5px) translateY(2px);
 }
 
-#contactFormSection #contactForm #contactFormSubmitBtn img {
+#footerSection #contactFormSection #contactForm #contactFormSubmitBtn img {
   width: 25px;
   margin-left: 3px;
   transition: all 0.2s ease-out;
   transform: translateY(2px);
+  object-fit: scale-down;
 }
 
-#contactFormSection #contactForm #sliderHeader {
+#footerSection #contactFormSection #contactForm #sliderHeader {
   margin: 1em;
   margin-top: 40px;
 }
 
-#contactFormSection #contactForm #budgetSlider {
+#footerSection #contactFormSection #contactForm #budgetSlider {
   width: 100%;
 }
 
-#contactFormSection #contactForm h1 {
+#footerSection #contactFormSection #contactForm h1 {
   font-family: "open-sans", "Gothic A1", sans-serif;
   text-align: center;
 }
 
-#contactFormSection #contactForm input {
+#footerSection #contactFormSection #contactForm input {
   border: none;
   padding-left: 0.7em;
 }
 
-#contactFormSection #contactForm input::placeholder {
+#footerSection #contactFormSection #contactForm input::placeholder {
   font-family: "open-sans", "Gothic A1", sans-serif;
   color: #919191;
 }
 
-#contactFormSection #contactForm input:focus {
+#footerSection #contactFormSection #contactForm input:focus {
   outline: none;
 }
 
-#contactFormSection #contactForm .fieldInput {
+#footerSection #contactFormSection #contactForm .fieldInput {
   align-items: center;
   display: flex;
   width: 70%;
 }
 
-#contactFormSection #contactForm #toggleSubjectsBtn {
+#footerSection #contactFormSection #contactForm #toggleSubjectsBtn {
   color: black;
   position: absolute;
   left: calc(100% - 14px);
 }
 
-#contactFormSection #contactForm #contactFormSubject .colouredLine {
+#footerSection #contactFormSection #contactForm #contactFormSubject .colouredLine {
   background-color: black;
 }
 
-#contactFormSection #contactForm #contactFormSubject input {
+#footerSection #contactFormSection #contactForm #contactFormSubject input {
   width: calc(100% - 20px);
   -o-text-overflow: ellipsis;
   -ms-text-overflow: ellipsis;
   text-overflow: ellipsis;
 }
 
-#contactFormSection #contactForm #contactFormSubject .fieldInput {
+#footerSection #contactFormSection #contactForm #contactFormSubject .fieldInput {
   display: flex;
   position: relative;
 }
 
-#contactFormSection #contactForm #contactFormName div.fieldInput input {
+#footerSection #contactFormSection #contactForm #contactFormName div.fieldInput input {
   width: 100%;
 }
 
-#contactFormSection #contactForm #contactFormName .colouredLine {
+#footerSection #contactFormSection #contactForm #contactFormName .colouredLine {
   background-color: black;
 }
 
-#contactFormSection #contactForm #contactFormBudget {
+#footerSection #contactFormSection #contactForm #contactFormBudget {
   margin-bottom: 3em;
   position: relative;
 }
 
-#contactFormSection #contactForm > section:not(#contactFormBudget) {
+#footerSection #contactFormSection #contactForm > section:not(#contactFormBudget) {
   display: flex;
   border-bottom: #b3b3b3 1px solid;
   padding-bottom: 10px;
@@ -174,11 +193,11 @@ header p {
   z-index: 1;
 }
 
-#contactFormSection #contactForm > section:not(#contactFormBudget) .fieldInput {
+#footerSection #contactFormSection #contactForm > section:not(#contactFormBudget) .fieldInput {
   flex-grow: 1;
 }
 
-#contactFormSection #contactForm label {
+#footerSection #contactFormSection #contactForm label {
   width: 80px;
   font-family: "open-sans", "Gothic A1", sans-serif;
   font-size: 0.9em;
@@ -187,11 +206,11 @@ header p {
   background-color: white;
 }
 
-#contactFormSection #contactForm label.fieldFilled {
+#footerSection #contactFormSection #contactForm label.fieldFilled {
   margin-left: -90px;
 }
 
-#contactFormSection #contactForm #subjectOptions {
+#footerSection #contactFormSection #contactForm #subjectOptions {
   max-height: 0px;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -200,7 +219,7 @@ header p {
   overflow: hidden;
 }
 
-#contactFormSection #contactForm #subjectOptions a {
+#footerSection #contactFormSection #contactForm #subjectOptions a {
   text-decoration: none;
   font-family: "open-sans", "Gothic A1", sans-serif;
   font-size: 0.9em;
@@ -210,34 +229,34 @@ header p {
   transition: color 0.1s;
 }
 
-#contactFormSection #contactForm #subjectOptions a:hover {
+#footerSection #contactFormSection #contactForm #subjectOptions a:hover {
   color: #646464;
 }
 
-#contactFormSection #contactForm #subjectOptions a.activeSubject {
+#footerSection #contactFormSection #contactForm #subjectOptions a.activeSubject {
   color: #646464;
 }
 
-#contactFormSection #contactForm #subjectOptions .subjectOption {
+#footerSection #contactFormSection #contactForm #subjectOptions .subjectOption {
   display: flex;
   align-items: center;
 }
 
-#contactFormSection #contactForm #subjectOptions .subjectOption .separator {
+#footerSection #contactFormSection #contactForm #subjectOptions .subjectOption .separator {
   margin-left: 5px;
   margin-right: 5px;
   background-color: #bfbfbf;
   height: 13px;
 }
 
-.threeItemRow {
+#footerSection .threeItemRow {
   display: flex;
   margin: 0 0.7em 0 0.7em;
   justify-content: space-between;
   margin-top: 56px;
 }
 
-.threeItemRow section {
+#footerSection .threeItemRow section {
   width: 32%;
   display: flex;
   border-bottom: #b3b3b3 1px solid;
@@ -245,19 +264,19 @@ header p {
   position: relative;
 }
 
-.threeItemRow section input {
+#footerSection .threeItemRow section input {
   width: 100%;
 }
 
-.threeItemRow section .colouredLine {
+#footerSection .threeItemRow section .colouredLine {
   background-color: black;
 }
 
-#toggleSubjectsBtn i {
+#footerSection #toggleSubjectsBtn i {
   transition: all 0.4s;
 }
 
-.colouredLine {
+#footerSection .colouredLine {
   background-color: white;
   width: 0%;
   height: 1px;
@@ -268,19 +287,19 @@ header p {
   transition: 0.5s width;
 }
 
-.colouredLine.expanded {
+#footerSection .colouredLine.expanded {
   width: 100%;
 }
 
-.showingSubscribeButton:not(.vertical) {
+#footerSection .showingSubscribeButton:not(.vertical) {
   transform: translateX(-75px);
 }
 
-.subscribeBtn {
+#footerSection .subscribeBtn {
   width: 130px !important;
 }
 
-#newsletterPrompt {
+#footerSection #newsletterPrompt {
   text-align: center;
   background-color: lightblue;
   font-family: "open-sans", "Gothic A1", sans-serif;
@@ -290,21 +309,21 @@ header p {
   margin-top: 2em;
 }
 
-#newsletterPrompt h2 {
+#footerSection #newsletterPrompt h2 {
   font-weight: 100;
 }
 
-#newsletterPrompt #newsletterEmail {
+#footerSection #newsletterPrompt #newsletterEmail {
   position: relative;
   margin: auto;
 }
 
-#newsletterPrompt #newsletterEmail input {
+#footerSection #newsletterPrompt #newsletterEmail input {
   font-size: 0.9em;
   font-weight: 300;
 }
 
-#newsletterPrompt .errorEmail {
+#footerSection #newsletterPrompt .errorEmail {
   width: 50%;
   text-align: left;
   margin-top: 8px;
@@ -316,7 +335,7 @@ header p {
   transform: translateX(50%);
 }
 
-#newsletterPrompt .fieldInput {
+#footerSection #newsletterPrompt .fieldInput {
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   width: 50%;
   margin: auto;
@@ -325,7 +344,7 @@ header p {
   width: 75%;
 }
 
-#newsletterPrompt .fieldInput .clearAndClose {
+#footerSection #newsletterPrompt .fieldInput .clearAndClose {
   display: none;
   position: absolute;
   top: 0;
@@ -334,7 +353,7 @@ header p {
   color: #bfbfbf;
 }
 
-#newsletterPrompt .fieldInput .colouredLine {
+#footerSection #newsletterPrompt .fieldInput .colouredLine {
   background-color: white;
   width: 0%;
   height: 1px;
@@ -345,11 +364,11 @@ header p {
   transition: 0.5s width;
 }
 
-#newsletterPrompt .fieldInput .colouredLine.expanded {
+#footerSection #newsletterPrompt .fieldInput .colouredLine.expanded {
   width: 100%;
 }
 
-#newsletterPrompt .fieldInput .emailDropdown {
+#footerSection #newsletterPrompt .fieldInput .emailDropdown {
   background-color: white;
   position: absolute;
   top: 100%;
@@ -362,7 +381,7 @@ header p {
   overflow: hidden;
 }
 
-#newsletterPrompt .fieldInput .emailDropdown .emailOption {
+#footerSection #newsletterPrompt .fieldInput .emailDropdown .emailOption {
   height: 40px;
   display: flex;
   align-items: center;
@@ -370,19 +389,19 @@ header p {
   cursor: pointer;
 }
 
-#newsletterPrompt .fieldInput .emailDropdown .emailOption .customEmail {
+#footerSection #newsletterPrompt .fieldInput .emailDropdown .emailOption .customEmail {
   color: RGB(177, 177, 177);
 }
 
-#newsletterPrompt .fieldInput .emailDropdown .emailOption.keyboardSelectedEmailOption {
+#footerSection #newsletterPrompt .fieldInput .emailDropdown .emailOption.keyboardSelectedEmailOption {
   background: #f6f6f6;
 }
 
-#newsletterPrompt .fieldInput .emailDropdown .emailOption:hover {
+#footerSection #newsletterPrompt .fieldInput .emailDropdown .emailOption:hover {
   background: #f6f6f6;
 }
 
-#newsletterPrompt input {
+#footerSection #newsletterPrompt input {
   width: 100%;
   background-color: transparent;
   border: none;
@@ -391,29 +410,29 @@ header p {
   padding-left: 0.7em;
 }
 
-#newsletterPrompt input:focus {
+#footerSection #newsletterPrompt input:focus {
   outline: none;
 }
 
-#newsletterPrompt input::placeholder {
+#footerSection #newsletterPrompt input::placeholder {
   color: #bfbfbf;
   font-family: "open-sans", "Gothic A1", sans-serif;
 }
 
-#newsletterPrompt h1 {
+#footerSection #newsletterPrompt h1 {
   font-size: 3em;
   margin-bottom: 0.5em;
 }
 
-#newsletterPrompt h2 {
+#footerSection #newsletterPrompt h2 {
   margin-bottom: 2em;
 }
 
-#newsletterPrompt #newsletterPrompt {
+#footerSection #newsletterPrompt #newsletterPrompt {
   display: inline-block;
 }
 
-#footerBottom {
+#footerSection #footerBottom {
   display: flex;
   width: 95%;
   justify-content: space-between;
@@ -422,15 +441,15 @@ header p {
   font-size: 0.74em;
 }
 
-#footerBottom #footerBottomLeft, #footerBottom #footerBottomRight {
+#footerSection #footerBottom #footerBottomLeft, #footerSection #footerBottom #footerBottomRight {
   margin: 2em 0 2em 0;
 }
 
-#footerBottom #footerBottomRight {
+#footerSection #footerBottom #footerBottomRight {
   width: 50%;
 }
 
-#footerTop {
+#footerSection #footerTop {
   display: flex;
   justify-content: space-between;
   width: 95%;
@@ -440,50 +459,50 @@ header p {
   align-items: center;
 }
 
-#footerTop #footerTopLeft {
+#footerSection #footerTop #footerTopLeft {
   padding-top: 30px;
   padding-bottom: 20px;
   display: flex;
 }
 
-#footerTop #footerTopLeft span {
+#footerSection #footerTop #footerTopLeft span {
   display: flex;
   margin-right: 10px;
 }
 
-#footerTop #footerTopLeft img {
+#footerSection #footerTop #footerTopLeft img {
   width: 25px;
   margin-right: 10px;
 }
 
-#footerTop #footerTopRight {
+#footerSection #footerTop #footerTopRight {
   display: flex;
   width: 38em;
   justify-content: space-between;
   align-items: center;
 }
 
-#footerTop #footerTopRight .separator {
+#footerSection #footerTop #footerTopRight .separator {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.socialMedia {
+#footerSection .socialMedia {
   display: flex;
   width: 7em;
   justify-content: space-between;
 }
 
-.socialMedia .iconSocialMedia {
+#footerSection .socialMedia .iconSocialMedia {
   color: #939393;
   font-size: 1.7em;
   transition: color 0.4s;
 }
 
-.socialMedia .iconSocialMedia:hover {
+#footerSection .socialMedia .iconSocialMedia:hover {
   color: #646464;
 }
 
-.fieldError {
+#footerSection .fieldError {
   font-family: "open-sans", "Gothic A1", sans-serif;
   font-size: 0.9em;
   color: red;
@@ -492,66 +511,65 @@ header p {
   transition: 1s all;
 }
 
-.errorContainer {
+#footerSection .errorContainer {
   position: absolute;
   top: 100%;
   overflow: hidden;
   height: 30px;
 }
 
-.displayError {
+#footerSection .displayError {
   transform: translateY(10px);
   opacity: 1;
 }
 
-.telNo {
+#footerSection .telNo {
   font-size: 16px;
 }
 
-.telNo a {
+#footerSection .telNo a {
   text-decoration: none;
   color: #09c;
   transition: all 0.4s;
 }
 
-.telNo a:hover {
+#footerSection .telNo a:hover {
   opacity: 0.65;
 }
 
-.separator {
+#footerSection .separator {
   width: 1px;
   background-color: black;
   height: 17px;
   display: inline-block;
 }
 
-.siteMapLinks {
+#footerSection .siteMapLinks {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.siteMapLinks a {
+#footerSection .siteMapLinks a {
   text-decoration: none;
   color: #939393;
   transition: color 0.4s;
 }
 
-.siteMapLinks a:hover {
+#footerSection .siteMapLinks a:hover {
   color: #646464;
 }
 
-.siteMapLinks .separator {
+#footerSection .siteMapLinks .separator {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.siteMapLinkContainer {
+#footerSection .siteMapLinkContainer {
   padding: 5px;
   text-align: center;
 }
 
-/* Hide everything */
-input[type=range]::-ms-track {
+#footerSection input[type=range]::-ms-track {
   width: 100%;
   height: 100%;
   -webkit-appearance: none;
@@ -563,7 +581,7 @@ input[type=range]::-ms-track {
   overflow: visible;
 }
 
-input[type=range]::-moz-range-track {
+#footerSection input[type=range]::-moz-range-track {
   width: 100%;
   height: 100%;
   -moz-appearance: none;
@@ -575,7 +593,7 @@ input[type=range]::-moz-range-track {
   overflow: visible;
 }
 
-input[type=range] {
+#footerSection input[type=range] {
   width: 100%;
   height: 100%;
   -webkit-appearance: none;
@@ -587,17 +605,16 @@ input[type=range] {
   overflow: visible;
 }
 
-input[type=range]:focus::-webkit-slider-runnable-track {
+#footerSection input[type=range]:focus::-webkit-slider-runnable-track {
   background: transparent;
   border: transparent;
 }
 
-input[type=range]:focus {
+#footerSection input[type=range]:focus {
   outline: none;
 }
 
-/* Make the thumbs the same size as your custom sliderthumb. They will not be visible but they will be draggable. */
-input[type=range]::-ms-thumb {
+#footerSection input[type=range]::-ms-thumb {
   width: 40px;
   height: 40px;
   border-radius: 0px;
@@ -605,7 +622,7 @@ input[type=range]::-ms-thumb {
   background: transparent;
 }
 
-input[type=range]::-moz-range-thumb {
+#footerSection input[type=range]::-moz-range-thumb {
   width: 40px;
   height: 40px;
   border-radius: 0px;
@@ -613,7 +630,7 @@ input[type=range]::-moz-range-thumb {
   background: transparent;
 }
 
-input[type=range]::-webkit-slider-thumb {
+#footerSection input[type=range]::-webkit-slider-thumb {
   width: 40px;
   height: 40px;
   border-radius: 0px;
@@ -622,24 +639,22 @@ input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
 }
 
-/* Eliminate the default appearance and tooltip behaviour that is peculiar to IE and Edge. */
-input[type=range]::-ms-fill-lower {
+#footerSection input[type=range]::-ms-fill-lower {
   background: transparent;
   border: 0 none;
 }
 
-input[type=range]::-ms-fill-upper {
+#footerSection input[type=range]::-ms-fill-upper {
   background: transparent;
   border: 0 none;
 }
 
-input[type=range]::-ms-tooltip {
+#footerSection input[type=range]::-ms-tooltip {
   display: none;
 }
 
-/* The .slider and .slidervertical classes are for the range inputs. Set the z-index high so its on top. */
-.slider,
-.slidervertical {
+#footerSection .slider,
+#footerSection .slidervertical {
   position: absolute;
   left: 0;
   top: 0;
@@ -647,8 +662,7 @@ input[type=range]::-ms-tooltip {
   z-index: 100;
 }
 
-/* slidershell exists only to provide a positioning context for the range input and other elements.*/
-.slidershell {
+#footerSection .slidershell {
   border: 0 none;
   position: relative;
   left: 0;
@@ -658,15 +672,13 @@ input[type=range]::-ms-tooltip {
   margin: auto;
 }
 
-/* .slidertrack is the visible track on which the user drags the thumb button. */
-.slidertrack {
+#footerSection .slidertrack {
   border-top: 1px #b3b3b3 solid;
   position: absolute;
   width: 100%;
 }
 
-/* .sliderfill adds color (or a gradient as seen here) to the track as the user drags the thumb. */
-.sliderfill {
+#footerSection .sliderfill {
   position: absolute;
   pointer-events: none;
   background: #00767f;
@@ -677,7 +689,7 @@ input[type=range]::-ms-tooltip {
   transform: translateY(-50%);
 }
 
-.sliderthumb {
+#footerSection .sliderthumb {
   width: 40px;
   height: 40px;
   z-index: 2;
@@ -693,8 +705,7 @@ input[type=range]::-ms-tooltip {
   pointer-events: none;
 }
 
-/* .slidervalue can be styled as you see fit */
-.slidervalue {
+#footerSection .slidervalue {
   height: 40px;
   line-height: 40px;
   color: #717171;
@@ -710,66 +721,65 @@ input[type=range]::-ms-tooltip {
   pointer-events: none;
 }
 
-table {
+#footerSection table {
   width: 100%;
 }
 
-footer {
+#footerSection footer {
   margin: auto;
 }
 
-footer #flagAndText {
+#footerSection footer #flagAndText {
   font-size: 16px;
   color: rgba(0, 0, 0, 0.8);
   text-align: center;
   white-space: nowrap;
 }
 
-footer .openingHours {
+#footerSection footer .openingHours {
   font-size: 14px;
   color: #222222;
 }
 
-/* Media query stuff for form */
 @media screen and (max-width: 1340px) {
-  #footerBottom {
+  #footerSection #footerBottom {
     flex-direction: column;
   }
-  #footerBottom #footerBottomLeft {
+  #footerSection #footerBottom #footerBottomLeft {
     text-align: center;
     order: 2;
   }
-  #footerBottom #footerBottomRight {
+  #footerSection #footerBottom #footerBottomRight {
     order: 1;
     width: 95%;
     margin-left: auto;
     margin-right: auto;
   }
-  #rowOne, .reg {
+  #footerSection #rowOne, #footerSection .reg {
     margin-bottom: 20px;
   }
-  #footerTop {
+  #footerSection #footerTop {
     flex-direction: column;
   }
-  #footerTop #footerTopRight {
+  #footerSection #footerTop #footerTopRight {
     flex-direction: column;
     width: unset;
   }
-  #footerTop #footerTopRight .telNo {
+  #footerSection #footerTop #footerTopRight .telNo {
     font-size: 20px;
     margin-bottom: 20px;
   }
-  #footerTop #footerTopRight .openingHours {
+  #footerSection #footerTop #footerTopRight .openingHours {
     margin-bottom: 20px;
   }
-  #footerTop #footerTopRight .socialMedia {
+  #footerSection #footerTop #footerTopRight .socialMedia {
     margin-bottom: 20px;
     width: 10em;
   }
-  #footerTop #footerTopRight .separator {
+  #footerSection #footerTop #footerTopRight .separator {
     display: none;
   }
-  #footerTop #footerTopLeft span {
+  #footerSection #footerTop #footerTopLeft span {
     display: flex;
     flex-direction: column;
     margin-right: 0;
@@ -777,74 +787,77 @@ footer .openingHours {
 }
 
 @media screen and (max-width: 1024px) {
-  #contactFormSection form#contactForm, header p {
+  #footerSection #contactFormSection form#contactForm, #footerSection header p {
     width: 85%;
   }
-  header {
+  #footerSection header {
     width: 100%;
   }
-  header p {
+  #footerSection header p {
     text-align: center;
   }
-  #newsletterPrompt h1 {
+  #footerSection #newsletterPrompt h1 {
     font-size: 2.5em;
   }
-  .threeItemRow {
+  #footerSection .threeItemRow {
     flex-direction: column;
     margin: 0 0.7em 0 0.7em;
   }
-  .threeItemRow section {
+  #footerSection .threeItemRow section {
     width: 100%;
-    margin-top: 45px;
+    margin-top: 56px;
+  }
+  #footerSection .threeItemRow #contactFormEmail, #footerSection .threeItemRow #contactFormPhone {
+    margin-top: 66px;
   }
 }
 
 @media screen and (max-width: 850px) {
-  #newsletterPrompt h1 {
+  #footerSection #newsletterPrompt h1 {
     font-size: 2em;
   }
 }
 
 @media screen and (max-width: 850px) {
-  #newsletterPrompt {
+  #footerSection #newsletterPrompt {
     padding-left: 1em;
     padding-right: 1em;
   }
-  #newsletterPrompt .fieldInput {
+  #footerSection #newsletterPrompt .fieldInput {
     width: 85%;
   }
 }
 
-button.conceptaiButton.showing.vertical {
+#footerSection button.conceptaiButton.showing.vertical {
   display: none;
 }
 
-.clearAndClose img {
+#footerSection .clearAndClose img {
   height: 11px;
 }
 
 @media screen and (min-width: 735px) {
-  .showingSubscribeButton {
+  #footerSection .showingSubscribeButton {
     width: 33% !important;
   }
 }
 
-.conceptaiButton img {
+#footerSection .conceptaiButton img {
   width: 25px;
   transition: all 0.2s ease-out;
   transform: translateY(2px);
   margin-left: 3px;
 }
 
-.conceptaiButton:hover img {
+#footerSection .conceptaiButton:hover img {
   transform: translateX(5px) translateY(2px);
 }
 
-.copyright {
+#footerSection .copyright {
   color: #999999;
 }
 
-button.conceptaiButton.hidden {
+#footerSection button.conceptaiButton.hidden {
   left: 150%;
   position: absolute;
   top: 100%;
@@ -860,7 +873,7 @@ button.conceptaiButton.hidden {
   pointer-events: none;
 }
 
-button.conceptaiButton.showing {
+#footerSection button.conceptaiButton.showing {
   display: block;
   opacity: 1.0;
   left: calc(100% + 20px);
@@ -877,22 +890,22 @@ button.conceptaiButton.showing {
   cursor: pointer;
 }
 
-.newsletterCentered {
+#footerSection .newsletterCentered {
   position: relative;
   font-family: "open-sans", "Gothic A1", sans-serif;
 }
 
-.newsletterCentered h2, .newsletterCentered h1 {
+#footerSection .newsletterCentered h2, #footerSection .newsletterCentered h1 {
   font-weight: 400;
 }
 
-#sliderHeader {
+#footerSection #sliderHeader {
   font-family: "open-sans", "Gothic A1", sans-serif;
   text-align: center;
   font-size: 0.9em;
 }
 
-button.conceptaiButton.hidden.vertical {
+#footerSection button.conceptaiButton.hidden.vertical {
   opacity: 0;
   left: 50%;
   top: 100%;
@@ -907,7 +920,7 @@ button.conceptaiButton.hidden.vertical {
   pointer-events: none;
 }
 
-button.conceptaiButton.showing.vertical {
+#footerSection button.conceptaiButton.showing.vertical {
   opacity: 1.0;
   left: 50%;
   top: 60%;
@@ -923,33 +936,33 @@ button.conceptaiButton.showing.vertical {
 }
 
 @media screen and (max-width: 735px) {
-  button.conceptaiButton.showing.vertical {
+  #footerSection button.conceptaiButton.showing.vertical {
     display: block;
   }
-  #newsletterPrompt .fieldInput {
+  #footerSection #newsletterPrompt .fieldInput {
     width: 85% !important;
   }
-  button.conceptaiButton.hidden:not(.vertical) {
+  #footerSection button.conceptaiButton.hidden:not(.vertical) {
     display: none !important;
   }
-  button.conceptaiButton.showing:not(.vertical) {
+  #footerSection button.conceptaiButton.showing:not(.vertical) {
     display: none !important;
   }
-  .nonmobile {
+  #footerSection .nonmobile {
     display: none;
   }
-  .showingSubscribeButton {
+  #footerSection .showingSubscribeButton {
     width: 33% !important;
     transform: translateX(0) !important;
   }
 }
 
-.flagAndTextContainer {
+#footerSection .flagAndTextContainer {
   display: flex;
   align-items: center;
 }
 
-svg {
+#footerSection svg {
   width: 40px;
   height: 40px;
   transform: rotate(-90deg);
@@ -958,7 +971,7 @@ svg {
   z-index: 100;
 }
 
-circle:not(#outline) {
+#footerSection circle:not(#outline) {
   fill: white;
   stroke: #5bce11;
   stroke-width: 32;
@@ -967,7 +980,7 @@ circle:not(#outline) {
   /* for 38% */
 }
 
-circle#outline {
+#footerSection circle#outline {
   fill: transparent;
   stroke: #2cb43e;
   stroke-width: 4;
@@ -1021,7 +1034,7 @@ circle#outline {
   }
 }
 
-#newsletterPrompt {
+#footerSection #newsletterPrompt {
   -webkit-animation: ConceptaiGradient 10s ease infinite;
   -moz-animation: ConceptaiGradient 10s ease infinite;
   -o-animation: ConceptaiGradient 10s ease infinite;
@@ -1029,28 +1042,32 @@ circle#outline {
   background-size: 400% 400%;
 }
 
-#contactFormSection #contactForm #contactFormBudget {
+#footerSection #contactFormSection #contactForm #contactFormBudget {
   overflow: visible;
 }
 
-.fieldLabelContainer {
+#footerSection .fieldLabelContainer {
   overflow: hidden;
 }
 
-.subjectOptionPrompt {
+#footerSection .subjectOptionPrompt {
   width: 100%;
   font-family: "open-sans", "Gothic A1", sans-serif;
   font-size: 0.9em;
   margin-bottom: 10px;
 }
 
-#subjectOptions {
+#footerSection #subjectOptions {
   display: flex;
   transition: max-height 0.5s ease;
   z-index: 100;
 }
 
-.subjectOptionsDisplayed {
+#footerSection .subjectOptionsDisplayed {
   transition: max-height 1s ease;
   max-height: 200px !important;
+}
+
+#footerSection input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset;
 }

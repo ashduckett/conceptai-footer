@@ -103,10 +103,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     subscribeButtons.forEach(function(item) {
         item.addEventListener('click', function(evt) {
-            console.log('clicked')
-            
             var email = document.getElementById('signupEmail').value;
-
 
             var request = new XMLHttpRequest();
             request.open('POST', 'sendNewsletterEmail.php', true);
@@ -126,9 +123,16 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
 
                     if (JSON.parse(resp).status === 1) {
-                        //  contactButton.innerHTML = 'Thank You!';
                         const signedUpMessage = document.getElementsByClassName('newsletterMessage')[0];
                         signedUpMessage.classList.add('displayError');
+
+                        setTimeout(function() {
+                            signedUpMessage.classList.remove('displayError');
+                            signUpEmailInput.value = '';
+
+                            showSubscribeButton(false)
+
+                        }, 10000);
 
                     }
                 } else {
@@ -152,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 
-
+                                     
     document.getElementsByClassName('conceptaiButton')[0].classList.add('hidden');
 
     const signupEmailInput = document.getElementById('signupEmail');
@@ -173,14 +177,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
             item.addEventListener('blur', function() {
                 if (item.id === 'contactSubject') {
-
-                    console.log(item.value.trim() === '')
                     subjectOptions.classList.toggle('subjectOptionsDisplayed', !item.value.trim() === '');
                     document.querySelector('#toggleSubjectsBtn i').classList.toggle('fa-rotate-180', !item.value.trim() === '');
                 }
                 var value = this.value;
-              
-                
 
                 if (item.id === 'contactEmail') {
                     var validEmail = validateEmail(value.trim());
@@ -229,9 +229,12 @@ document.addEventListener("DOMContentLoaded", function() {
     close.addEventListener('click', function(evt) {
         evt.preventDefault();
         signupEmailInput.value = '';
+        
         document.getElementsByClassName('errorEmail')[0].style.display = 'none';
         emailDropdown.style.height = '0px';
         showSubscribeButton(false)
+
+        document.getElementsByClassName('newsletterMessage')[0].classList.remove('displayError');
     });
 
     var appendHere = document.querySelector('#newsletterEmail .fieldInput');
@@ -479,6 +482,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
                     if (JSON.parse(resp).status === 1) {
                         contactButton.innerHTML = 'Thank You!';
+
+                        // Fire off a ten second timer
+                        setTimeout(function() {
+                            // Set the button back to normal
+                            contactButton.innerHTML = 'Submit enquiry <img src="img/getInTouch.png">';
+
+                            // Clear each form item
+
+                            document.getElementById('contactName').value = '';
+                            document.getElementById('contactSubject').value = '';
+                            document.getElementById('contactCompany').value = '';
+                            document.getElementById('contactEmail').value = '';
+                            document.getElementById('contactPhone').value = '';
+                            document.getElementById('contactEnquiry').value = '';
+                            document.getElementById('slider').value = 1200;
+
+                            
+                            setValue(1200);
+
+                        }, 10000);
                     }
                 } else {
                     // There was an error. Show this in the UI.
